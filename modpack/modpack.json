@@ -2,17 +2,2634 @@
   "schemaVersion": 1,
   "modpack": {
     "name": "Zerith Modpack",
-    "version": "0.0.0-template",
+    "version": "1.0.1",
     "minecraftVersion": "1.21.1",
     "loader": "fabric"
   },
   "mods": [
     {
+      "id": "advancementplaques",
+      "filename": "AdvancementPlaques-1.21.1-fabric-1.6.8.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/AdvancementPlaques-1.21.1-fabric-1.6.8.jar",
+      "sha256": "dda6cc159edd450d05b9ff15832747b951dacd068c601018c219bca833ce5bef",
+      "size": 195505
+    },
+    {
+      "id": "axesareweapons",
+      "filename": "AxesAreWeapons-1.10.2-fabric-1.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/AxesAreWeapons-1.10.2-fabric-1.21.jar",
+      "sha256": "c93c319f612d9c96ecb3b0aafd4ea4b695c92d864f1414da4788f899c9183f40",
+      "size": 36104
+    },
+    {
+      "id": "betteradvancements",
+      "filename": "BetterAdvancements-Fabric-1.21.1-0.4.3.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/BetterAdvancements-Fabric-1.21.1-0.4.3.21.jar",
+      "sha256": "7542d8f2f280fad5698f114ab28c28300e52bdcf80622f3c104b96434162fcf5",
+      "size": 100151
+    },
+    {
+      "id": "betterf3",
+      "filename": "BetterF3-11.0.3-Fabric-1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/BetterF3-11.0.3-Fabric-1.21.1.jar",
+      "sha256": "e0e4bb25fbe23b16b7574474ee9fde5cdc9757d05885bc43978f4ea5e8e258ad",
+      "size": 1810710
+    },
+    {
+      "id": "biomesoplenty",
+      "filename": "BiomesOPlenty-fabric-1.21.1-21.1.0.14.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/BiomesOPlenty-fabric-1.21.1-21.1.0.14.jar",
+      "sha256": "12b70618d74324fda96e8ae051c99ea56ceba192e3edbfc7d39e87aceac7199c",
+      "size": 22349809
+    },
+    {
+      "id": "bridgingmod",
+      "filename": "BridgingMod-2.6.2+1.21.1.fabric-release.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/BridgingMod-2.6.2+1.21.1.fabric-release.jar",
+      "sha256": "e18746e17027cb87a8b592726c64dee4c1379456e67dce01e300d9982fdde36b",
+      "size": 5923344
+    },
+    {
+      "id": "clumps",
+      "filename": "Clumps-fabric-1.21.1-19.0.0.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Clumps-fabric-1.21.1-19.0.0.1.jar",
+      "sha256": "49e406cb2872e24a2d2dbe461b93f0c8fbee1748d14c2a941e54f785e3a1e1a7",
+      "size": 20723
+    },
+    {
+      "id": "corgilib",
+      "filename": "Corgilib-Fabric-1.21.1-5.0.0.10.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Corgilib-Fabric-1.21.1-5.0.0.10.jar",
+      "sha256": "f5b50463e508d78dead427ccb33cbe1186cd8b2c368930ae4e14e6b1fd146a91",
+      "size": 692966
+    },
+    {
+      "id": "craftpresence",
+      "filename": "CraftPresence-2.7.1+1.21.1-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/CraftPresence-2.7.1+1.21.1-fabric.jar",
+      "sha256": "ef231f2d05ac326007a71aba3287b8edb8b7401b8a37aa441ad5b2d4f4542089",
+      "size": 1405231
+    },
+    {
+      "id": "crash_assistant",
+      "filename": "CrashAssistant-fabric-1.20.2-1.21.4-1.11.12.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/CrashAssistant-fabric-1.20.2-1.21.4-1.11.12.jar",
+      "sha256": "053467535d419cef7fa546fdd509b633bd21bc4e0e9e95a49e9ea336514bef2d",
+      "size": 3493082
+    },
+    {
+      "id": "creativecore",
+      "filename": "CreativeCore_FABRIC_v2.13.54_mc1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/CreativeCore_FABRIC_v2.13.54_mc1.21.1.jar",
+      "sha256": "810f00498accd2e95ff2263055b1e86c7ef1e93ab778cdc48eb91e7113b1e2ba",
+      "size": 1257310
+    },
+    {
+      "id": "creeperoverhaul",
+      "filename": "CreeperOverhaul-fabric-1.21.1-4.0.6.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/CreeperOverhaul-fabric-1.21.1-4.0.6.jar",
+      "sha256": "45ea8ca85ea5926484347de7289ceeeff3e79c6f16b4b04f98ffebf2e484b5a6",
+      "size": 1180412
+    },
+    {
+      "id": "cutthrough",
+      "filename": "CutThrough-v21.1.0-1.21.1-Fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/CutThrough-v21.1.0-1.21.1-Fabric.jar",
+      "sha256": "fbaf7b231fa5c1158af3669a35b99bfcb42eaf5e956293a38484d22681afac6e",
+      "size": 51389
+    },
+    {
+      "id": "diagonalfences",
+      "filename": "DiagonalFences-v21.1.1-1.21.1-Fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/DiagonalFences-v21.1.1-1.21.1-Fabric.jar",
+      "sha256": "98431343875ef8b10fb332faa3021faa416aef60fb87943f64d82458aa5f182a",
+      "size": 165134
+    },
+    {
+      "id": "easymagic",
+      "filename": "EasyMagic-v21.1.4-1.21.1-Fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/EasyMagic-v21.1.4-1.21.1-Fabric.jar",
+      "sha256": "14b4837b5ec8cff7e7fdaa8f141498bfae7224a251c987fab77cee7ec55da157",
+      "size": 140897
+    },
+    {
+      "id": "euphoria_patcher",
+      "filename": "EuphoriaPatcher-1.10.5-r5.9.3-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/EuphoriaPatcher-1.10.5-r5.9.3-fabric.jar",
+      "sha256": "f6be638d63462d765004d08f912a105db981dc6a24ba2dd6b5e22b5fab416589",
+      "size": 4602936
+    },
+    {
+      "id": "explorerscompass",
+      "filename": "ExplorersCompass-1.21.1-2.6.0-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/ExplorersCompass-1.21.1-2.6.0-fabric.jar",
+      "sha256": "f6327bb26c3ea5981792f1a5a7ada4fcd78b0e4fe3a563612122d37a68d46c4b",
+      "size": 177481
+    },
+    {
+      "id": "farmersdelight",
+      "filename": "FarmersDelight-1.21.1-3.3.6+refabricated.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/FarmersDelight-1.21.1-3.3.6+refabricated.jar",
+      "sha256": "c719a1e92f1e16f953265069afa9b5d52f2119b434e1f6e0ad4d7a1e449941dc",
+      "size": 3243316
+    },
+    {
+      "id": "forgeconfigapiport",
+      "filename": "ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
+      "sha256": "2e3a8f0e3bda85a7d722720e7ce879cbd9d028d9395c6fc224d329b3c982d9b1",
+      "size": 633065
+    },
+    {
+      "id": "glitchcore",
+      "filename": "GlitchCore-fabric-1.21.1-2.1.0.2.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/GlitchCore-fabric-1.21.1-2.1.0.2.jar",
+      "sha256": "7cbec4ae898c3011bf785dd58155e3478ed2bc92ff240ec39a607951e7c1b139",
+      "size": 329237
+    },
+    {
+      "id": "highlighter",
+      "filename": "Highlighter-1.21-fabric-1.1.11.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Highlighter-1.21-fabric-1.1.11.jar",
+      "sha256": "e7e1d43e52da7b695907632785675d9aa21c2726b3ade7a51721e4b0e16f67b1",
+      "size": 30687
+    },
+    {
+      "id": "iceberg",
+      "filename": "Iceberg-1.21.1-fabric-1.3.2.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Iceberg-1.21.1-fabric-1.3.2.jar",
+      "sha256": "9214790af6fb75c19ef6b95e0e47999addf018e8c7a1630a5118c4252e6d8d36",
+      "size": 413302
+    },
+    {
+      "id": "immediatelyfast",
+      "filename": "ImmediatelyFast-Fabric-1.6.15+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/ImmediatelyFast-Fabric-1.6.15+1.21.1.jar",
+      "sha256": "9c391f0864caf9083cac98e44b1ab6235e45fbf340efda5ba75e0a21929d05d5",
+      "size": 342235
+    },
+    {
+      "id": "incendium",
+      "filename": "Incendium_1.21.x_v5.4.4.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Incendium_1.21.x_v5.4.4.jar",
+      "sha256": "285a4f69fe2391f2175f7fc9316d727a39c79bdd214923c59284d569bce656f4",
+      "size": 4267528
+    },
+    {
+      "id": "jade",
+      "filename": "Jade-1.21.1-Fabric-15.10.6.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Jade-1.21.1-Fabric-15.10.6.jar",
+      "sha256": "fb834cc77804a6f509690c54b4af56305ce7a7f3171f8616310710f0af1f673a",
+      "size": 740746
+    },
+    {
+      "id": "jadeaddons",
+      "filename": "JadeAddons-1.21.1-Fabric-6.0.3.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/JadeAddons-1.21.1-Fabric-6.0.3.jar",
+      "sha256": "a0657caaea70de48a70fc29394b64cddc5b93bd0517a52691ac5907a632eba1f",
+      "size": 39917
+    },
+    {
+      "id": "leavesbegone",
+      "filename": "LeavesBeGone-v21.1.1-1.21.1-Fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/LeavesBeGone-v21.1.1-1.21.1-Fabric.jar",
+      "sha256": "a723684cf396e3eced0467b45b3cb03c5bfebf89a5a935813861fedc523a139d",
+      "size": 55826
+    },
+    {
+      "id": "luckperms",
+      "filename": "LuckPerms-Fabric-5.4.140.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/LuckPerms-Fabric-5.4.140.jar",
+      "sha256": "3e17d490f87761c174478f68860367610a473ff5c2a9a9daad608773bf0e81bc",
+      "size": 1574861
+    },
+    {
+      "id": "mes",
+      "filename": "MoogsEndStructures-universal-1.21-2.1.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/MoogsEndStructures-universal-1.21-2.1.1.jar",
+      "sha256": "00726445a0b2aaa9ab61ac5fa8a165280a45a0e22f1d67898d0b4934614729d5",
+      "size": 2285901
+    },
+    {
+      "id": "moogs_structures",
+      "filename": "MoogsStructureLib-fabric-1.21.1-3.4.2.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/MoogsStructureLib-fabric-1.21.1-3.4.2.jar",
+      "sha256": "9255b63523807ad999b1e25cb89c60e1e2d27feaeac091d24a581ec8ffc2aed3",
+      "size": 1092175
+    },
+    {
+      "id": "mousetweaks",
+      "filename": "MouseTweaks-fabric-mc1.21-2.26.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/MouseTweaks-fabric-mc1.21-2.26.jar",
+      "sha256": "3e9fa4800fafef616fbf1545d62f5898f55c83fbd4126ce2b48b5e0077243fc0",
+      "size": 75984
+    },
+    {
+      "id": "naturescompass",
+      "filename": "NaturesCompass-1.21.1-2.6.0-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/NaturesCompass-1.21.1-2.6.0-fabric.jar",
+      "sha256": "ca49039369a0d8a9b8ab0a9e03e838c8ac1a5c7724756ec42762c54e80ed87a3",
+      "size": 233392
+    },
+    {
+      "id": "nochatreports",
+      "filename": "NoChatReports-FABRIC-1.21.1-v2.9.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/NoChatReports-FABRIC-1.21.1-v2.9.1.jar",
+      "sha256": "413c3952cbbf641b492bb2e47763ed7e48d1d72db0863d9d2274a74ce5269849",
+      "size": 309410
+    },
+    {
+      "id": "nullscape",
+      "filename": "Nullscape_1.21.x_v1.2.14.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Nullscape_1.21.x_v1.2.14.jar",
+      "sha256": "8749c6fdda659335e50116c18e012cdf8699b3789859c82559af2c6f425c93ae",
+      "size": 355748
+    },
+    {
+      "id": "biomeswevegone",
+      "filename": "Oh-The-Biomes-Weve-Gone-Fabric-2.6.3.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Oh-The-Biomes-Weve-Gone-Fabric-2.6.3.jar",
+      "sha256": "486b76905150a401208c129b9fc0824cb3b50315d0136e0316ea8a115897daf2",
+      "size": 20458637
+    },
+    {
+      "id": "ohthetreesyoullgrow",
+      "filename": "Oh-The-Trees-Youll-Grow-fabric-1.21.1-5.3.6.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Oh-The-Trees-Youll-Grow-fabric-1.21.1-5.3.6.jar",
+      "sha256": "d14b77b03c1e8bd2f7333e4b6c6687bc3d00f20b205af428393a0b4dffa4834d",
+      "size": 174280
+    },
+    {
+      "id": "overflowingbars",
+      "filename": "OverflowingBars-v21.1.1-1.21.1-Fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/OverflowingBars-v21.1.1-1.21.1-Fabric.jar",
+      "sha256": "6d2b80e4eb6c2ddf886bbbb51ed959dc4011d23dc1e5615f648820f4503ebc7e",
+      "size": 77329
+    },
+    {
+      "id": "prism",
+      "filename": "Prism-1.21.1-fabric-1.0.11.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Prism-1.21.1-fabric-1.0.11.jar",
+      "sha256": "244504f9730a6581e674b4e40ed399c5b08aa240a24aec49147338024eccbad7",
+      "size": 61661
+    },
+    {
+      "id": "ribbits",
+      "filename": "Ribbits-1.21.1-Fabric-4.1.6.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Ribbits-1.21.1-Fabric-4.1.6.jar",
+      "sha256": "4cf86564aed393410fb1dbca3a9ce2425382307655e92bb6b43f3ddcee5bf731",
+      "size": 2343967
+    },
+    {
+      "id": "searchables",
+      "filename": "Searchables-fabric-1.21.1-1.0.2.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Searchables-fabric-1.21.1-1.0.2.jar",
+      "sha256": "0b58a40a41db4a4af4ef84475b0ea330be3b18fdcac2eca68ede46d9f4df3d76",
+      "size": 79531
+    },
+    {
+      "id": "sereneseasons",
+      "filename": "SereneSeasons-fabric-1.21.1-10.1.0.9.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/SereneSeasons-fabric-1.21.1-10.1.0.9.jar",
+      "sha256": "66ea772b78eb700801fa80e9e090a320f3a1ed38f4899ce237d9481e324aa1b8",
+      "size": 389904
+    },
+    {
+      "id": "storagedrawers",
+      "filename": "StorageDrawers-fabric-1.21.1-13.11.4.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/StorageDrawers-fabric-1.21.1-13.11.4.jar",
+      "sha256": "6763a9f28148d5e90af8a5db647f5f8b97eea41ff78ca9870864321c4d4c2977",
+      "size": 1148425
+    },
+    {
+      "id": "terrablender",
+      "filename": "TerraBlender-fabric-1.21.1-4.1.0.8.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/TerraBlender-fabric-1.21.1-4.1.0.8.jar",
+      "sha256": "f87e94a7fa1227711c3f8aea9ffac7a14e0c7be212fe50ddee95d2c6ba723cac",
+      "size": 337990
+    },
+    {
+      "id": "terralith",
+      "filename": "Terralith_1.21.x_v2.6.2.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/Terralith_1.21.x_v2.6.2.jar",
+      "sha256": "9cd4d402fde0f523e5b430ac8fd479ce05aea7a50fe0c8c26901f5f769272214",
+      "size": 2813817
+    },
+    {
+      "id": "unilib",
+      "filename": "UniLib-1.2.1+1.21.1-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/UniLib-1.2.1+1.21.1-fabric.jar",
+      "sha256": "50f48dc0a6876089c11e4ea49c5976d2cc75c3c2b4332ae233ab143ece9abbb6",
+      "size": 1776773
+    },
+    {
+      "id": "visualworkbench",
+      "filename": "VisualWorkbench-v21.1.2-1.21.1-Fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/VisualWorkbench-v21.1.2-1.21.1-Fabric.jar",
+      "sha256": "d44dcf0d796624d8a46413c674d5a40c1e559b56d2c7982ba6df745c8f210891",
+      "size": 75226
+    },
+    {
+      "id": "yungsapi",
+      "filename": "YungsApi-1.21.1-Fabric-5.1.9.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsApi-1.21.1-Fabric-5.1.9.jar",
+      "sha256": "cd935a9ba45a51bba370fdf77f83db7450cdc533664a4f3d24f2c56f7460f5f3",
+      "size": 1284146
+    },
+    {
+      "id": "bettercaves",
+      "filename": "YungsBetterCaves-1.21.1-Fabric-3.1.6.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsBetterCaves-1.21.1-Fabric-3.1.6.jar",
+      "sha256": "fddc95ab5da4695539d891e22b32de57535dd70d0bc7ec69ff0e5848a98ab54a",
+      "size": 527316
+    },
+    {
+      "id": "betterdeserttemples",
+      "filename": "YungsBetterDesertTemples-1.21.1-Fabric-4.1.5.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsBetterDesertTemples-1.21.1-Fabric-4.1.5.jar",
+      "sha256": "2bb73eef278c277657b27f72d2fa1d917a17c14052bf526a2ba175f6e9a63012",
+      "size": 1033207
+    },
+    {
+      "id": "betterdungeons",
+      "filename": "YungsBetterDungeons-1.21.1-Fabric-5.1.4.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsBetterDungeons-1.21.1-Fabric-5.1.4.jar",
+      "sha256": "69fe7d93afa1803d7658df3f861213f8255f68d4e976d66ddce66fba08d120bc",
+      "size": 909660
+    },
+    {
+      "id": "betterendisland",
+      "filename": "YungsBetterEndIsland-1.21.1-Fabric-3.1.2.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsBetterEndIsland-1.21.1-Fabric-3.1.2.jar",
+      "sha256": "9a398731319f53458abedf6295d63dc140c82d81cfa89e088526b0821375af59",
+      "size": 522278
+    },
+    {
+      "id": "betterjungletemples",
+      "filename": "YungsBetterJungleTemples-1.21.1-Fabric-3.1.2.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsBetterJungleTemples-1.21.1-Fabric-3.1.2.jar",
+      "sha256": "8b6ac004345da935b5b9bcb70624f4a3197411f9420d6459a302524f8dea42dc",
+      "size": 923910
+    },
+    {
+      "id": "bettermineshafts",
+      "filename": "YungsBetterMineshafts-1.21.1-Fabric-5.1.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsBetterMineshafts-1.21.1-Fabric-5.1.1.jar",
+      "sha256": "27949f5bae0afeff457711a5b42482be301b76bc8b1136f1120f848489bb5fa6",
+      "size": 615927
+    },
+    {
+      "id": "betterfortresses",
+      "filename": "YungsBetterNetherFortresses-1.21.1-Fabric-3.1.5.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsBetterNetherFortresses-1.21.1-Fabric-3.1.5.jar",
+      "sha256": "77a258e499559f1190c872277f8eecf202dd4ef0681674dce941003fa4367f78",
+      "size": 736418
+    },
+    {
+      "id": "betteroceanmonuments",
+      "filename": "YungsBetterOceanMonuments-1.21.1-Fabric-4.1.2.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsBetterOceanMonuments-1.21.1-Fabric-4.1.2.jar",
+      "sha256": "4cfbb226bd1db17032ac7e7306e94ed27f1a8e2f3e09fb62c47688f8a527adec",
+      "size": 1150417
+    },
+    {
+      "id": "betterstrongholds",
+      "filename": "YungsBetterStrongholds-1.21.1-Fabric-5.1.3.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsBetterStrongholds-1.21.1-Fabric-5.1.3.jar",
+      "sha256": "1cb412c83aa0e8273d29a1122c5799eb15a48acc8f0b770efe451c516647f5f8",
+      "size": 587855
+    },
+    {
+      "id": "betterwitchhuts",
+      "filename": "YungsBetterWitchHuts-1.21.1-Fabric-4.1.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsBetterWitchHuts-1.21.1-Fabric-4.1.1.jar",
+      "sha256": "954ff004de151652d9be69e03d1b848d6fd15a0f5f2df15c4ce2e764467685e7",
+      "size": 298721
+    },
+    {
+      "id": "yungsbridges",
+      "filename": "YungsBridges-1.21.1-Fabric-5.1.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsBridges-1.21.1-Fabric-5.1.1.jar",
+      "sha256": "37cc120aceb6263afbcedaeee1c9fe9770c7d5dabd938d00293017e781051b45",
+      "size": 261209
+    },
+    {
+      "id": "yungsextras",
+      "filename": "YungsExtras-1.21.1-Fabric-5.1.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/YungsExtras-1.21.1-Fabric-5.1.1.jar",
+      "sha256": "120023cc97cb5eb86972a7783250cbb35505d42d5d6b31da70906c85c0ffb7f5",
+      "size": 325985
+    },
+    {
+      "id": "accessories",
+      "filename": "accessories-fabric-1.1.0-beta.54+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/accessories-fabric-1.1.0-beta.54+1.21.1.jar",
+      "sha256": "5edab210a283ac66ae1126adf8f43d7f30a8bdcf54ee5fafcf127ad5ddbb0a2a",
+      "size": 1103673
+    },
+    {
+      "id": "accessories_compat_layer",
+      "filename": "accessories_compat_layer-fabric-0.1.13+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/accessories_compat_layer-fabric-0.1.13+1.21.1.jar",
+      "sha256": "16d8f473c3748481be05c19db9ca43f870ba120a1b7979f3c91d77926afc1c25",
+      "size": 398467
+    },
+    {
+      "id": "advancednetherite",
+      "filename": "advancednetherite-fabric-2.3.1-1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/advancednetherite-fabric-2.3.1-1.21.1.jar",
+      "sha256": "7d1bfd1130e7cfd6695b3f05951c589986f93ca26a755e88385f4cbf1401cce9",
+      "size": 511641
+    },
+    {
+      "id": "aether",
+      "filename": "aether-1.21.1-1.5.11-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/aether-1.21.1-1.5.11-fabric.jar",
+      "sha256": "5909f195eb995f3760de5acff197e4c32029c5941d32320bc4a84c90bee79faf",
+      "size": 40931095
+    },
+    {
+      "id": "almostunified",
+      "filename": "almostunified-fabric-1.21.1-1.4.2.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/almostunified-fabric-1.21.1-1.4.2.jar",
+      "sha256": "450d327a689469f84a62ffde09d22763c8e999f918d7871e3dcf877afa951875",
+      "size": 255956
+    },
+    {
+      "id": "appleskin",
+      "filename": "appleskin-fabric-mc1.21-3.0.6.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/appleskin-fabric-mc1.21-3.0.6.jar",
+      "sha256": "9a19cec1294b1bc708392a08e6926dcb85d7378ec5ad909a4b6fcb8bc3bfeaa2",
+      "size": 1082585
+    },
+    {
+      "id": "aquamirae",
+      "filename": "aquamirae-fabric-1.21.1-7.2.13.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/aquamirae-fabric-1.21.1-7.2.13.jar",
+      "sha256": "00e9034428f5f12b0b1cf0efdaacb71b465a1a2cb05bdf4b9fa1304a8a84a48a",
+      "size": 26110551
+    },
+    {
+      "id": "architectury",
+      "filename": "architectury-13.0.12-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/architectury-13.0.12-fabric.jar",
+      "sha256": "6caac47b3cdae0bcc6ccfbe31dbecc87dab5f43ac461a87f21c63498e8e90ca5",
+      "size": 600949
+    },
+    {
+      "id": "armoroftheages",
+      "filename": "armoroftheages-fabric-1.21.1-1.5.11.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/armoroftheages-fabric-1.21.1-1.5.11.jar",
+      "sha256": "f8988ceca1d981f065c28af585f43feb54d6642b269f326aa6f4fcb0e97e567b",
+      "size": 546625
+    },
+    {
+      "id": "artifacts",
+      "filename": "artifacts-fabric-13.2.4.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/artifacts-fabric-13.2.4.jar",
+      "sha256": "d8dee0003b294039c3ae8b1be09da3eb402a288690664005106f852f67e6502f",
+      "size": 1487812
+    },
+    {
+      "id": "athena",
+      "filename": "athena-fabric-1.21.1-4.0.6.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/athena-fabric-1.21.1-4.0.6.jar",
+      "sha256": "e17aad84c690ac4e46300a4180b3ae4077ffa4f526dbc82d117afbbff4ee83e4",
+      "size": 88425
+    },
+    {
+      "id": "attributefix",
+      "filename": "attributefix-fabric-1.21.1-21.1.3.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/attributefix-fabric-1.21.1-21.1.3.jar",
+      "sha256": "eb7a22da2eb35370c41545b8bfa3c562cf161647254d2e1527b8305ccf67bf07",
+      "size": 21590
+    },
+    {
+      "id": "balm",
+      "filename": "balm-fabric-1.21.1-21.0.67.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/balm-fabric-1.21.1-21.0.67.jar",
+      "sha256": "8384e1df572784dc969802cc75dd28a1c8f194bb2cb17aef4271c564e59b6d61",
+      "size": 808190
+    },
+    {
+      "id": "bettercombat",
+      "filename": "bettercombat-fabric-2.4.0+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/bettercombat-fabric-2.4.0+1.21.1.jar",
+      "sha256": "2ecd3284a4443300873bb7a7aba4643aacf91acd778b377faeffa44afe049b9b",
+      "size": 930023
+    },
+    {
+      "id": "bookshelf",
+      "filename": "bookshelf-fabric-1.21.1-21.1.81.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/bookshelf-fabric-1.21.1-21.1.81.jar",
+      "sha256": "df2dd3a3e75f2dbf56baf9bdb6cc0007f9c0efb0f2b2067f047ddf98ea1b49d8",
+      "size": 330355
+    },
+    {
+      "id": "capes",
+      "filename": "capes-1.5.4+1.21-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/capes-1.5.4+1.21-fabric.jar",
+      "sha256": "ed7f2384319bd2e4804713a98d3bfd081c2f701f57db3629d3991dd22c138351",
+      "size": 77572
+    },
+    {
+      "id": "chat_heads",
+      "filename": "chat_heads-0.15.7-fabric-1.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/chat_heads-0.15.7-fabric-1.21.jar",
+      "sha256": "9ac63ac359ed20b416e6d4bd0d7b314a5688470232de1a30c894418cd0b3b788",
+      "size": 86944
+    },
+    {
+      "id": "chipped",
+      "filename": "chipped-fabric-1.21.1-4.0.2.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/chipped-fabric-1.21.1-4.0.2.jar",
+      "sha256": "1721c94365fd8d2d3c3fdcac7efbfd7e605daa7dfb8adc4c126c5bbde2820c79",
+      "size": 15016830
+    },
+    {
+      "id": "chisel",
+      "filename": "chisel-fabric-2.0.1+mc1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/chisel-fabric-2.0.1+mc1.21.1.jar",
+      "sha256": "46a67853c2ff733e7916a9cc074645548b70fd1c843f7ce79be8dc803a1606c6",
+      "size": 8266945
+    },
+    {
+      "id": "cloth-config",
+      "filename": "cloth-config-15.0.140-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/cloth-config-15.0.140-fabric.jar",
+      "sha256": "33894e95da3af59014b39d126586d5241e07ea39f8618763e30dab637405f95f",
+      "size": 1157166
+    },
+    {
+      "id": "collective",
+      "filename": "collective-1.21.1-8.87.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/collective-1.21.1-8.87.jar",
+      "sha256": "81503885e59ea463e858271e3d224505519bff475d59a43e73964d645c0577fc",
+      "size": 1634586
+    },
+    {
+      "id": "comforts",
+      "filename": "comforts-fabric-9.0.5+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/comforts-fabric-9.0.5+1.21.1.jar",
+      "sha256": "73ff17028967a2e30731ea79aee2e18dd8e2d59a5dcd075facd6491cae1b2231",
+      "size": 914494
+    },
+    {
+      "id": "continuity",
+      "filename": "continuity-3.0.0+1.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/continuity-3.0.0+1.21.jar",
+      "sha256": "99fd46b834874d167ea2349a9a72947cbfa7192f927aa99bbeb4b0637aa208d4",
+      "size": 1014044
+    },
+    {
+      "id": "crittersandcompanions",
+      "filename": "crittersandcompanions-fabric-1.21.1-2.7.0.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/crittersandcompanions-fabric-1.21.1-2.7.0.jar",
+      "sha256": "02f91e85b53cff8da257d74f3924f42f9ca44238d8a4c04d226470581c476341",
+      "size": 4193551
+    },
+    {
+      "id": "cryonicconfig",
+      "filename": "cryonicconfig-fabric-1.0.0+mc1.21.11.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/cryonicconfig-fabric-1.0.0+mc1.21.11.jar",
+      "sha256": "6fbd56d2599c3f08908a076333e416a86d3d544d28fd702dbbbb7739f8c7efc5",
+      "size": 21696
+    },
+    {
+      "id": "deeperdarker",
+      "filename": "deeperdarker-fabric-1.21-1.3.3-plus-b.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/deeperdarker-fabric-1.21-1.3.3-plus-b.jar",
+      "sha256": "d8b00ac7b28498785b46ca733687301113374c4520f1d5ad8bba0a7ae8041c1b",
+      "size": 17977802
+    },
+    {
+      "id": "doubledoors",
+      "filename": "doubledoors-1.21.1-7.5.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/doubledoors-1.21.1-7.5.jar",
+      "sha256": "378216c5b294d66975c8e1cbe01bb814af0f61426e9d3e515f535810a20e08e5",
+      "size": 71436
+    },
+    {
+      "id": "dummmmmmy",
+      "filename": "dummmmmmy-1.21-2.1.2-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/dummmmmmy-1.21-2.1.2-fabric.jar",
+      "sha256": "44e85245c5580b306eadba582a91d3501eb4b3dc64d8e9402d55bb4f9768b650",
+      "size": 217148
+    },
+    {
+      "id": "enhanced_attack_indicator",
+      "filename": "enhanced_attack_indicator-1.2.0+1.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/enhanced_attack_indicator-1.2.0+1.21.jar",
+      "sha256": "da46822aa3a8d3b42db4aa0ecd135b56fca4931e59e9637e8a89b331824a400a",
+      "size": 35526
+    },
+    {
+      "id": "entity_model_features",
+      "filename": "entity_model_features-3.3.12-1.21-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/entity_model_features-3.3.12-1.21-fabric.jar",
+      "sha256": "d089852c2b554165568ac786047a45efdc0f1141c607eca03f9e7e7e66524022",
+      "size": 653743
+    },
+    {
+      "id": "entity_texture_features",
+      "filename": "entity_texture_features-7.2.7-1.21-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/entity_texture_features-7.2.7-1.21-fabric.jar",
+      "sha256": "c03bfc500223543f0b6759adb676fc48b1e7359b3f6ae0fe40ebe44b94278994",
+      "size": 805015
+    },
+    {
+      "id": "entityculling",
+      "filename": "entityculling-fabric-1.12.1-mc1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/entityculling-fabric-1.12.1-mc1.21.1.jar",
+      "sha256": "6633d4bd692ac9bc4db26547abe31004ee06ff7f0fb99dcff60f34cf610e9779",
+      "size": 1533262
+    },
+    {
+      "id": "fabric-api",
+      "filename": "fabric-api-0.116.18+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/fabric-api-0.116.18+1.21.1.jar",
+      "sha256": "1cb46442dda6d3be9979a2619610eb1c1f6641cd7ed7cb3eec058589ce9eed46",
+      "size": 2453884
+    },
+    {
+      "id": "fabric-language-kotlin",
+      "filename": "fabric-language-kotlin-1.14.2+kotlin.2.4.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/fabric-language-kotlin-1.14.2+kotlin.2.4.21.jar",
+      "sha256": "fbdbf5286ab9d65fedb49e6e01c15e338ae303eb7b9d8c7423d0a9bcfe526ef9",
+      "size": 8142878
+    },
+    {
+      "id": "ferritecore",
+      "filename": "ferritecore-7.0.3-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/ferritecore-7.0.3-fabric.jar",
+      "sha256": "98c3ab1d5aab8f14b5d082d3f1a467727fd335f02d124555c94339761c4c18f2",
+      "size": 123450
+    },
+    {
+      "id": "fragmentum",
+      "filename": "fragmentum-5.4.0+1.21.1-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/fragmentum-5.4.0+1.21.1-fabric.jar",
+      "sha256": "8e006da47e01dad1201177af4d8d0e7e6f1c9362d4bb7ba8631230d1eb1b52ae",
+      "size": 9770655
+    },
+    {
+      "id": "ftbchunks",
+      "filename": "ftb-chunks-fabric-2101.1.24.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/ftb-chunks-fabric-2101.1.24.jar",
+      "sha256": "d1a2f408db4da920190c5201aa3ee4a05f2efb7661dcb2257b5a17ada7cfb145",
+      "size": 662668
+    },
+    {
+      "id": "ftblibrary",
+      "filename": "ftb-library-fabric-2101.1.39.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/ftb-library-fabric-2101.1.39.jar",
+      "sha256": "a1ece2641cd76cd36c5ebaa6c2c5fe4ca5d2e42a2bc39a0b435fec2f8d27b893",
+      "size": 1473377
+    },
+    {
+      "id": "ftbteams",
+      "filename": "ftb-teams-fabric-2101.1.12.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/ftb-teams-fabric-2101.1.12.jar",
+      "sha256": "1794b629211d0481ac8ae53ebfe1641bf7010e86d145addebe5b44ffc5d75ec9",
+      "size": 303993
+    },
+    {
+      "id": "ftbultimine",
+      "filename": "ftb-ultimine-fabric-2101.1.15.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/ftb-ultimine-fabric-2101.1.15.jar",
+      "sha256": "7fe31bbc7193a90b500feed23c7dd689d501ae9bba4668b4a0926cb022373523",
+      "size": 176926
+    },
+    {
+      "id": "fusion",
+      "filename": "fusion-1.3.16-fabric-mc1.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/fusion-1.3.16-fabric-mc1.21.jar",
+      "sha256": "64cadd6b37f3376ce986b6dbedf6dbf9b55b08d77b396c24ada277d8f7cbd06f",
+      "size": 913396
+    },
+    {
+      "id": "fzzy_config",
+      "filename": "fzzy_config-0.7.7+1.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/fzzy_config-0.7.7+1.21.jar",
+      "sha256": "8183d6bf61e2b222bd628e0d3f6a01da50839244054e27ba4532e1768d709b8f",
+      "size": 2387721
+    },
+    {
+      "id": "geckolib",
+      "filename": "geckolib-fabric-1.21.1-4.9.3.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/geckolib-fabric-1.21.1-4.9.3.jar",
+      "sha256": "70186c70660e8de6c58f5b28625f71ae9e80eb0ad81b5d47b62fd5809bef2ee0",
+      "size": 664463
+    },
+    {
+      "id": "handcrafted",
+      "filename": "handcrafted-fabric-1.21.1-4.0.3.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/handcrafted-fabric-1.21.1-4.0.3.jar",
+      "sha256": "9609c27e2eeaed4c633ade2d68ad980cfbed0442a10239846a67e9c62bc1b230",
+      "size": 7127377
+    },
+    {
+      "id": "iris",
+      "filename": "iris-fabric-1.8.14-beta.1+mc1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/iris-fabric-1.8.14-beta.1+mc1.21.1.jar",
+      "sha256": "0ceb694040b4628bf3fa02286cfe5f0db833195669ab07f8caa4001359763eff",
+      "size": 2791343
+    },
+    {
+      "id": "jamlib",
+      "filename": "jamlib-fabric-1.3.6+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/jamlib-fabric-1.3.6+1.21.1.jar",
+      "sha256": "84c3a6813d6fdb0446092a477a0bfde0238ab9a49efc1ab110ae4871cc3e20da",
+      "size": 187766
+    },
+    {
+      "id": "jei",
+      "filename": "jei-1.21.1-fabric-19.64.0.455.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/jei-1.21.1-fabric-19.64.0.455.jar",
+      "sha256": "1bc14659d8cf0cd9de801f56947950521134b25eb37725ce3ea94797b9165745",
+      "size": 2416860
+    },
+    {
+      "id": "justenoughbreeding",
+      "filename": "justenoughbreeding-fabric-1.21.1-3.3.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/justenoughbreeding-fabric-1.21.1-3.3.1.jar",
+      "sha256": "104302975f91ed40f34babd50d8998a687e05ef514abf3bae296d538240ce683",
+      "size": 301857
+    },
+    {
+      "id": "lambdynlights",
+      "filename": "lambdynamiclights-4.8.11+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/lambdynamiclights-4.8.11+1.21.1.jar",
+      "sha256": "913b0358b1031828f1e060ea0ee361232dc2a1c82464f488a0a920739ce7c763",
+      "size": 2023375
+    },
+    {
+      "id": "lithium",
+      "filename": "lithium-fabric-0.15.4+mc1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/lithium-fabric-0.15.4+mc1.21.1.jar",
+      "sha256": "92329d98c57f5a22091a0adb509fdb1d60113a5602c708b799b13134bad13baa",
+      "size": 797454
+    },
+    {
+      "id": "lithostitched",
+      "filename": "lithostitched-1.8.1-fabric-21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/lithostitched-1.8.1-fabric-21.1.jar",
+      "sha256": "04980f7e667032fc89c61c4c264565c1564b2808c57da52dcfe427fea1fee1d1",
+      "size": 1015426
+    },
+    {
+      "id": "lmft",
+      "filename": "lmft-1.1.1+1.21.9-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/lmft-1.1.1+1.21.9-fabric.jar",
+      "sha256": "25ebdec14e3dc557866100c19169b0e2fb54cf7ef25d78f90aca4631ee2e5a0d",
+      "size": 78180
+    },
+    {
+      "id": "lootr",
+      "filename": "lootr-fabric-1.21.1-1.11.38.127.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/lootr-fabric-1.21.1-1.11.38.127.jar",
+      "sha256": "2b33fa73a28c14f0983459c165e8c7b491cd1d798c947b967207f66194fb531d",
+      "size": 1111591
+    },
+    {
+      "id": "lostrelics",
+      "filename": "lostrelics-1.21-r1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/lostrelics-1.21-r1.jar",
+      "sha256": "4cc0db18a8f8addeb7d61b1de88206f48fb411a48e3465e86e1b2e2887ce992b",
+      "size": 190501
+    },
+    {
+      "id": "mcwbridges",
+      "filename": "mcw-bridges-3.1.2-mc1.21.1fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mcw-bridges-3.1.2-mc1.21.1fabric.jar",
+      "sha256": "0ee00ccd82865e987ca4c0f1a57614c288385b93aa7daac8c81c5eb359934279",
+      "size": 666524
+    },
+    {
+      "id": "mcwdoors",
+      "filename": "mcw-doors-1.1.5-mc1.21.1fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mcw-doors-1.1.5-mc1.21.1fabric.jar",
+      "sha256": "36b12175ad87cefcbde35b187b9a1c5ce9e1af1471edf6c5064ebd1a8c868ef1",
+      "size": 1219302
+    },
+    {
+      "id": "mcwfurnitures",
+      "filename": "mcw-furniture-3.4.1-mc1.21.1fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mcw-furniture-3.4.1-mc1.21.1fabric.jar",
+      "sha256": "73d3f1f7b8a78c274919280161eefa36a3486f6b343e27f2bdd055ecf9a1da95",
+      "size": 2087232
+    },
+    {
+      "id": "mcwholidays",
+      "filename": "mcw-holidays-1.1.2-mc1.21.1fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mcw-holidays-1.1.2-mc1.21.1fabric.jar",
+      "sha256": "ecfd07e3452eefd9aaa49cf9c0cc907031b9b0ee41368ee0c440323702798e1f",
+      "size": 999600
+    },
+    {
+      "id": "mcwlights",
+      "filename": "mcw-lights-1.1.5-mc1.21.1fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mcw-lights-1.1.5-mc1.21.1fabric.jar",
+      "sha256": "a5743a24da303ec6ef259dc3d53e4f0eb2bfccbb3ecc3f223dbeb1714e457f32",
+      "size": 514085
+    },
+    {
+      "id": "mcwfences",
+      "filename": "mcw-mcwfences-1.2.1-mc1.21.1fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mcw-mcwfences-1.2.1-mc1.21.1fabric.jar",
+      "sha256": "32408564efb67ed8b02023365d19a31e80c859dbfc0e977790eb12e3a6095cba",
+      "size": 651571
+    },
+    {
+      "id": "mcwstairs",
+      "filename": "mcw-mcwstairs-1.0.2-mc1.21.1fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mcw-mcwstairs-1.0.2-mc1.21.1fabric.jar",
+      "sha256": "a6243c53256ad7d0813ba9e1003ca8ed5480f5354efcea0c0e8e5cbcb0fa2267",
+      "size": 521922
+    },
+    {
+      "id": "mcwwindows",
+      "filename": "mcw-mcwwindows-2.4.2-mc1.21.1fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mcw-mcwwindows-2.4.2-mc1.21.1fabric.jar",
+      "sha256": "c887517505ec2568839475d625967ea2277f190f238043d1caa3f7562ff8f77d",
+      "size": 1278810
+    },
+    {
+      "id": "mcwpaths",
+      "filename": "mcw-paths-1.1.2-mc1.21.1fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mcw-paths-1.1.2-mc1.21.1fabric.jar",
+      "sha256": "f382b057bc62d5ef324021cbcd372f47ee068aa4930e0e14da6863df33081455",
+      "size": 767800
+    },
+    {
+      "id": "mcwroofs",
+      "filename": "mcw-roofs-2.3.2-mc1.21.1fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mcw-roofs-2.3.2-mc1.21.1fabric.jar",
+      "sha256": "f0b181de6c35f36897ea18c92181409f0ccab604ceb4c34c9a2e126ec638bbc3",
+      "size": 1790000
+    },
+    {
+      "id": "mcwtrpdoors",
+      "filename": "mcw-trapdoors-1.1.5-mc1.21.1fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mcw-trapdoors-1.1.5-mc1.21.1fabric.jar",
+      "sha256": "b32ff007aa60c90a1293d52fd3f58b04e97b3c783034376ce830fd5b7359f001",
+      "size": 568267
+    },
+    {
+      "id": "mezz_config",
+      "filename": "mezz_config-1.21.1-fabric-0.7.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/mezz_config-1.21.1-fabric-0.7.1.jar",
+      "sha256": "46a524e3c5bd1bebfd886abfe8b8526e6edd011b123f267b91d892901972d19c",
+      "size": 395153
+    },
+    {
+      "id": "midnightlib",
+      "filename": "midnightlib-fabric-1.10.0+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/midnightlib-fabric-1.10.0+1.21.1.jar",
+      "sha256": "1fce2e43c5deece2fd277663b01ff94ce0dc92f03041164bed1808996c13f2dd",
+      "size": 63975
+    },
+    {
+      "id": "modelfix",
+      "filename": "modelfix-1.21-1.6-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/modelfix-1.21-1.6-fabric.jar",
+      "sha256": "53a0701f3583e2b794825858d2e4b7613df8b2dd22c277544c4b55f4bd08537a",
+      "size": 62761
+    },
+    {
+      "id": "moonlight",
+      "filename": "moonlight-1.21.1-3.8.3-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/moonlight-1.21.1-3.8.3-fabric.jar",
+      "sha256": "372886214cd261f6542f7c81bb4f6fba4c8139b8a9db68ee5885f7fc352135b2",
+      "size": 2353010
+    },
+    {
+      "id": "morechathistory",
+      "filename": "morechathistory-1.3.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/morechathistory-1.3.1.jar",
+      "sha256": "f6032e46826b63e18c8848a3053e32652fc5298892a216a53dce66598925fc6c",
+      "size": 3573
+    },
+    {
+      "id": "naturalist",
+      "filename": "naturalist-2.0.7-fabric-1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/naturalist-2.0.7-fabric-1.21.1.jar",
+      "sha256": "fed1028027eb7335e52e9dc3e3805bc8eb7d02aae116d2464c27cb12479bc4fb",
+      "size": 11281261
+    },
+    {
+      "id": "netherportalfix",
+      "filename": "netherportalfix-fabric-1.21.1-21.1.3.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/netherportalfix-fabric-1.21.1-21.1.3.jar",
+      "sha256": "c6589e3a95ee6dbced2442682caeec53789999bc6a2883f9919e039b1bee98c6",
+      "size": 213294
+    },
+    {
+      "id": "owo",
+      "filename": "owo-lib-0.12.15.4+1.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/owo-lib-0.12.15.4+1.21.jar",
+      "sha256": "825180ce17bc012fb450653b14df9f32479dcdd073fc3f133bb47462f5a63cec",
+      "size": 1183559
+    },
+    {
+      "id": "playeranimator",
+      "filename": "player-animation-lib-fabric-2.0.4+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/player-animation-lib-fabric-2.0.4+1.21.1.jar",
+      "sha256": "86ef8a23a5bc8f86d67ed37f3a93380d3946bad64123b22862ed057e7b624efd",
+      "size": 204541
+    },
+    {
+      "id": "plushie_buddies",
+      "filename": "plushie_buddies-1.0.2.hotfix-1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/plushie_buddies-1.0.2.hotfix-1.21.1.jar",
+      "sha256": "71bea1bae3f9023497dbce4b8e6140341af4e9fadefd66e0748138f27a135c81",
+      "size": 461048
+    },
+    {
+      "id": "plushies",
+      "filename": "plushies-fabric-1.5.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/plushies-fabric-1.5.1.jar",
+      "sha256": "b482d380ac78475ccb7be25b8aa24dda4204dc568eacc766d2161dc83aca47b6",
+      "size": 697371
+    },
+    {
+      "id": "polymorph",
+      "filename": "polymorph-fabric-1.1.0+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/polymorph-fabric-1.1.0+1.21.1.jar",
+      "sha256": "bc47b33c864b463167998680c296f513e6d06b42de6db03db0f274ae1f2ee671",
+      "size": 320928
+    },
+    {
+      "id": "prickle",
+      "filename": "prickle-fabric-1.21.1-21.1.11.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/prickle-fabric-1.21.1-21.1.11.jar",
+      "sha256": "d6d639078aecb72770f287d8253e4634114e2536ac9a2ad6ec5f442eb27dd07f",
+      "size": 87229
+    },
+    {
+      "id": "puzzleslib",
+      "filename": "puzzleslib-v21.1.66-mc1.21.1+fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/puzzleslib-v21.1.66-mc1.21.1+fabric.jar",
+      "sha256": "1a2a15f46bff3585ed2be60fb2bf46ff547187d8d5cc6c8f51fa4322802188ab",
+      "size": 1507756
+    },
+    {
+      "id": "rechiseled",
+      "filename": "rechiseled-1.2.6-fabric-mc1.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/rechiseled-1.2.6-fabric-mc1.21.jar",
+      "sha256": "f3a6eb838abe405c056226ad9b1d7a2778633dffc0c22ac81c19f17e0d27083d",
+      "size": 11951835
+    },
+    {
+      "id": "regions_unexplored",
+      "filename": "regions-unexplored-0.6.3-fabric-21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/regions-unexplored-0.6.3-fabric-21.1.jar",
+      "sha256": "d7a4ffa49a6b0a9125879a5f3d7630fe0d8f73633565a4d7ebdb9cee430d0338",
+      "size": 6286344
+    },
+    {
+      "id": "resourcefulconfig",
+      "filename": "resourcefulconfig-fabric-1.21-3.0.11.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/resourcefulconfig-fabric-1.21-3.0.11.jar",
+      "sha256": "8c2624ddeda09d00c42095a37281dc502c6dcaffae68a3e08c3ea57fef28425e",
+      "size": 345396
+    },
+    {
+      "id": "resourcefullib",
+      "filename": "resourcefullib-fabric-1.21-3.0.12.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/resourcefullib-fabric-1.21-3.0.12.jar",
+      "sha256": "93064c5aff85bf5e6385470f311fd1c7de172f58b02fefb1d2920db76f8cd8b5",
+      "size": 485586
+    },
+    {
+      "id": "rightclickharvest",
+      "filename": "rightclickharvest-fabric-4.7.1+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/rightclickharvest-fabric-4.7.1+1.21.1.jar",
+      "sha256": "8bf8c52b48f454094cd5026b28db273dde44cec804cf5212b1c3287165732745",
+      "size": 286647
+    },
+    {
+      "id": "servercore",
+      "filename": "servercore-fabric-1.5.19+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/servercore-fabric-1.5.19+1.21.1.jar",
+      "sha256": "be4540227b296d1d9435a20cb5df9bfabf9f0b150592740d2db6e8d5f8533d8d",
+      "size": 897353
+    },
+    {
+      "id": "skinlayers3d",
+      "filename": "skinlayers3d-fabric-1.11.4-mc1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/skinlayers3d-fabric-1.11.4-mc1.21.1.jar",
+      "sha256": "af04f7c2d59aa72ff8c872a348b0e0eef65d25e1ae73bfe2abac0732a6709814",
+      "size": 1914438
+    },
+    {
+      "id": "sodium",
+      "filename": "sodium-fabric-0.8.13+mc1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/sodium-fabric-0.8.13+mc1.21.1.jar",
+      "sha256": "3d43c14985a4deb19c654aad3393b454cf57e1ebcbba86c4ae6a98dfc60eca2d",
+      "size": 1574609
+    },
+    {
+      "id": "sophisticatedbackpacks",
+      "filename": "sophisticatedbackpacks-1.21.1-3.23.4.3.106.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/sophisticatedbackpacks-1.21.1-3.23.4.3.106.jar",
+      "sha256": "2c099bfd5dc02ace6e73ffd9259940b0597cd4da7216a53a2c60c6732900d6aa",
+      "size": 988478
+    },
+    {
+      "id": "sophisticatedcore",
+      "filename": "sophisticatedcore-1.21.1-1.2.9.21.168.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/sophisticatedcore-1.21.1-1.2.9.21.168.jar",
+      "sha256": "3c71a04d5b03cdf9d9fe50e71849fdf11291dd1fab149621e35688ef6e516054",
+      "size": 2996065
+    },
+    {
+      "id": "sophisticatedstorage",
+      "filename": "sophisticatedstorage-1.21.1-1.3.7.9.139.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/sophisticatedstorage-1.21.1-1.3.7.9.139.jar",
+      "sha256": "0dbaf1ff069c33a8c4738518d983d1cab0cdca6871a6c7b7dc5727c531eca215",
+      "size": 1670672
+    },
+    {
+      "id": "spark",
+      "filename": "spark-1.10.109-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/spark-1.10.109-fabric.jar",
+      "sha256": "fafc121ac53dab1c32e74b7a1cae47d54435ba4cbeeda1180dc96675a7757047",
+      "size": 3609981
+    },
+    {
+      "id": "starterkit",
+      "filename": "starterkit-1.21.1-9.0.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/starterkit-1.21.1-9.0.jar",
+      "sha256": "b91192429ccafff38a82f9727b1c32191dde2fcc37130caa35afa77c9b1ff35c",
+      "size": 308889
+    },
+    {
+      "id": "supermartijn642configlib",
+      "filename": "supermartijn642configlib-1.1.8-fabric-mc1.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/supermartijn642configlib-1.1.8-fabric-mc1.21.jar",
+      "sha256": "63a29f2acf4be2c5ca89a81a046c1100111ad2865d9638f638e27ca161e7211c",
+      "size": 206993
+    },
+    {
+      "id": "supermartijn642corelib",
+      "filename": "supermartijn642corelib-1.1.26a-fabric-mc1.21.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/supermartijn642corelib-1.1.26a-fabric-mc1.21.jar",
+      "sha256": "e7cd1e794a8e81c95024608751f1a37ca95cc28dce252a377a24190ab14935df",
+      "size": 653121
+    },
+    {
+      "id": "torchmaster",
+      "filename": "torchmaster-fabric-1.21.1-21.1.13.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/torchmaster-fabric-1.21.1-21.1.13.jar",
+      "sha256": "b1a01c4f72258b8646ca0decec0576701c6239882206c610c957834da1de2f3b",
+      "size": 184884
+    },
+    {
+      "id": "trinkets",
+      "filename": "trinkets-3.10.0.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/trinkets-3.10.0.jar",
+      "sha256": "349fd2aa8930b232050ee5304db55e4ef738b017971afe7c84acd589a95fda2f",
+      "size": 272944
+    },
+    {
+      "id": "voicechat",
+      "filename": "voicechat-fabric-1.21.1-2.6.22.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/voicechat-fabric-1.21.1-2.6.22.jar",
+      "sha256": "972a01592f670aa57f2dc2e3587a656b798106037468c61e4bfb49eba7d6ae36",
+      "size": 5369475
+    },
+    {
+      "id": "waystones",
+      "filename": "waystones-fabric-1.21.1-21.1.47.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/waystones-fabric-1.21.1-21.1.47.jar",
+      "sha256": "382da289e85010fbed4d309d5c6a2fc7655fd85209867181e905d87c2812efbb",
+      "size": 1284666
+    },
+    {
+      "id": "worldedit",
+      "filename": "worldedit-mod-7.3.8.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/worldedit-mod-7.3.8.jar",
+      "sha256": "5e7752c97876d87411e3760bcc573cc431f43c453722e6959fa7fe54db1b01ca",
+      "size": 6222854
+    },
+    {
+      "id": "xaerominimap",
+      "filename": "xaerominimap-fabric-1.21.1-26.6.0.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/xaerominimap-fabric-1.21.1-26.6.0.jar",
+      "sha256": "86bdc4282a73ed55e6a4903a7ba65940a6aed20404f7ab7c96f8d94078accd1b",
+      "size": 2234556
+    },
+    {
+      "id": "xaeroworldmap",
+      "filename": "xaeroworldmap-fabric-1.21.1-1.47.0.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/xaeroworldmap-fabric-1.21.1-1.47.0.jar",
+      "sha256": "3e8211e02681f8bc17e1a066b3fcffddfa969cff03f48a5400016f587ba5f8f2",
+      "size": 1456162
+    },
+    {
+      "id": "yet_another_config_lib_v3",
+      "filename": "yet_another_config_lib_v3-3.8.2+1.21.1-fabric.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/yet_another_config_lib_v3-3.8.2+1.21.1-fabric.jar",
+      "sha256": "6ab420b7d1326fc9851b96a8967504bd644da421ed6438ceb9a9d9c993a408b1",
+      "size": 1131265
+    },
+    {
       "id": "zerith-modsync",
       "filename": "zerith-modsync-1.0.0.jar",
-      "url": "https://github.com/OWNER/zerith-modsync/releases/download/v1.0.0/zerith-modsync-1.0.0.jar",
-      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-      "size": 1
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/zerith-modsync-1.0.0.jar",
+      "sha256": "9841b4546f0a59a1d3b66e341a1b0ff8031cd91b8193417d8fee4e5ece838936",
+      "size": 432445
+    },
+    {
+      "id": "zoomify",
+      "filename": "zoomify-2.15.2+1.21.1.jar",
+      "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/zoomify-2.15.2+1.21.1.jar",
+      "sha256": "6c317987df28922e227ab3ac4e39090460d99b965bcb9c8da8f9a4493b705d00",
+      "size": 872937
     }
-  ]
+  ],
+  "overrides": {
+    "filename": "overrides-v1.0.1.zip",
+    "url": "https://github.com/Deathgasm23/zerith-modsync/releases/download/v1.0.1/overrides-v1.0.1.zip",
+    "sha256": "ec6f4301f4191f1991253a7a60afe3505af3b587580b499a37ed6f77aa42eafd",
+    "size": 4908333,
+    "files": [
+      {
+        "path": "config/MouseTweaks.cfg",
+        "sha256": "4069ce1a439d8c37453c1b1e9f2037e0942674c7e48723a39b37eab245792ad4",
+        "size": 135
+      },
+      {
+        "path": "config/NoChatReports/NCR-Client.json",
+        "sha256": "edfe78d985fe67dce28104f3d87673e94c89134144451c291ecedcd2e2c3b480",
+        "size": 565
+      },
+      {
+        "path": "config/NoChatReports/NCR-Common.json",
+        "sha256": "0eaad2630bd70ade719f7810e805810ada25379269ea194e43d3eea30c51dec0",
+        "size": 230
+      },
+      {
+        "path": "config/NoChatReports/NCR-Encryption.json",
+        "sha256": "0f61ac30bfc78653a30d715f793e30a6a43d6715106706487efd0aea5d43a84c",
+        "size": 520
+      },
+      {
+        "path": "config/NoChatReports/NCR-ServerPreferences.json",
+        "sha256": "df32843b853e0a493ef3a9b1e39276818294353fbb0d833f7f61e77da0f5bca1",
+        "size": 24
+      },
+      {
+        "path": "config/NoChatReports/README.md",
+        "sha256": "c52b76ccad2bd1063a22c7f6bb9e7c5db6b00fb53a6fd605585972ee0e5fc01f",
+        "size": 167
+      },
+      {
+        "path": "config/accessories.json5",
+        "sha256": "b9f6a56acdb02a286de9aa06578dac5485656fb476adc819fb3c63dd49ad0785",
+        "size": 915
+      },
+      {
+        "path": "config/accessories_compat.json5",
+        "sha256": "f121e63f366d1aaa0f2a7bbe030d9f9e5473aeaa72eb2898493fd0292703f233",
+        "size": 224
+      },
+      {
+        "path": "config/accessorify/client_config.toml",
+        "sha256": "4a4110016504d19c7eccc207db57eef8c89cdc2371f4c79d70bc02175f9c56c0",
+        "size": 1604
+      },
+      {
+        "path": "config/accessorify/config.toml",
+        "sha256": "f9cf3f15e38f068c8324a5763db6296c8a4193dda7481b8f6d15f292369ab49d",
+        "size": 789
+      },
+      {
+        "path": "config/advancementplaques.toml",
+        "sha256": "bfc3eae162bd8b3056a3adf5d67b639198c657b7c4782ed0aa522e89ff5d03f4",
+        "size": 3020
+      },
+      {
+        "path": "config/aether-client.toml",
+        "sha256": "a5cd133520a74852454b07ceed94fcc4cdb42f30d44e8c905a06edbc13f71128",
+        "size": 4258
+      },
+      {
+        "path": "config/aether-common.toml",
+        "sha256": "87cff44fd6dcadcbe15ed346faba65afe90a4a0b948e4758a805753ae2475340",
+        "size": 1402
+      },
+      {
+        "path": "config/aether-startup.toml",
+        "sha256": "7540bee0eb77cd177eb6b550563709ca123b0b9ed77f9198d127340dcc528799",
+        "size": 104
+      },
+      {
+        "path": "config/aether/aether_customizations.txt",
+        "sha256": "113f7dfc56b7b2efdc782e45356c87c47174bb76dc34dcef24ca2ec32c7908e1",
+        "size": 84
+      },
+      {
+        "path": "config/aether/sun_altar_whitelist.json",
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "size": 2
+      },
+      {
+        "path": "config/almostunified/startup.json",
+        "sha256": "faa153ee9f954ff638c840ade55c103a5c60e8ff0014725c31c204fffd531f6f",
+        "size": 26
+      },
+      {
+        "path": "config/appleskin.json5",
+        "sha256": "ae87f2d1b38dfd4b1e0767dfeb539261deaaf4fd2eb73692afcbaac7147855b9",
+        "size": 1327
+      },
+      {
+        "path": "config/armoroftheages.json",
+        "sha256": "c6609e6ba086f855472bc3fd0b5e2651f2377aad5694d4cd4079e001a4023f5b",
+        "size": 3054
+      },
+      {
+        "path": "config/artifacts/client.toml",
+        "sha256": "fcc980a4e12e76dc42a3bc27db9fe237f628c63e2544048802b239a2a989c44c",
+        "size": 1013
+      },
+      {
+        "path": "config/artifacts/general.toml",
+        "sha256": "b73793e634d1a441c12ed1c3d02ec074b2f19a24766512f78ff0b9d83cf9768b",
+        "size": 2326
+      },
+      {
+        "path": "config/artifacts/items.toml",
+        "sha256": "85218a5af8b311d663c58a6c9b69c98eebd92fb8d1b8aaffab4118aa22519cdf",
+        "size": 20343
+      },
+      {
+        "path": "config/attributefix/aether/moa_max_jumps.json",
+        "sha256": "f4141221feb1e43056da711fcda29f9091344a48876c62e6f1d1a61fac8af44a",
+        "size": 387
+      },
+      {
+        "path": "config/attributefix/aquamirae/depths_fury.json",
+        "sha256": "21ea576119be38b794626a118aa762be00967a86486b17063e4fb10c8050184e",
+        "size": 379
+      },
+      {
+        "path": "config/attributefix/aquamirae/depths_resilience.json",
+        "sha256": "21ea576119be38b794626a118aa762be00967a86486b17063e4fb10c8050184e",
+        "size": 379
+      },
+      {
+        "path": "config/attributefix/artifacts/generic.attack_burning_duration.json",
+        "sha256": "2b35471191429cb7b18be98f70f23a3ea36ddf0d984a5a3f6a492ce3b3a1dba5",
+        "size": 381
+      },
+      {
+        "path": "config/attributefix/artifacts/generic.drinking_speed.json",
+        "sha256": "ea105c9bb954b8cc9e60749b9a304a1ff80fa0c80873099c569e94c6ea5d6c67",
+        "size": 417
+      },
+      {
+        "path": "config/attributefix/artifacts/generic.eating_speed.json",
+        "sha256": "ea105c9bb954b8cc9e60749b9a304a1ff80fa0c80873099c569e94c6ea5d6c67",
+        "size": 417
+      },
+      {
+        "path": "config/attributefix/artifacts/generic.flatulence.json",
+        "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
+        "size": 379
+      },
+      {
+        "path": "config/attributefix/artifacts/generic.invincibility_ticks.json",
+        "sha256": "f2b86540287515290388f49a96e00e5e9ae90abe7332b9beeb44870d0e30c206",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/artifacts/generic.mount_speed.json",
+        "sha256": "c568f31255bb84ce497127463bdeaa91d597a4336320d84bf669e630ccf169ea",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/artifacts/generic.movement_speed_on_snow.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/artifacts/generic.slip_resistance.json",
+        "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
+        "size": 379
+      },
+      {
+        "path": "config/attributefix/artifacts/generic.sprinting_speed.json",
+        "sha256": "c568f31255bb84ce497127463bdeaa91d597a4336320d84bf669e630ccf169ea",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/artifacts/generic.sprinting_step_height.json",
+        "sha256": "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0",
+        "size": 381
+      },
+      {
+        "path": "config/attributefix/artifacts/generic.swim_speed.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/artifacts/player.entity_experience.json",
+        "sha256": "137e8a8052b2264bc1c881b91b97011e4c33726819f4c434753ad5480ee3d19f",
+        "size": 381
+      },
+      {
+        "path": "config/attributefix/artifacts/player.villager_reputation.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/creeperoverhaul/swim_speed.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/ftbultimine/cooldown_modifier.json",
+        "sha256": "838f25c55c1adc889f5c14b94ddf7434c5eccf521dc8c3c93d46a0804d3f0633",
+        "size": 457
+      },
+      {
+        "path": "config/attributefix/ftbultimine/exhaustion_modifier.json",
+        "sha256": "838f25c55c1adc889f5c14b94ddf7434c5eccf521dc8c3c93d46a0804d3f0633",
+        "size": 457
+      },
+      {
+        "path": "config/attributefix/ftbultimine/experience_modifier.json",
+        "sha256": "838f25c55c1adc889f5c14b94ddf7434c5eccf521dc8c3c93d46a0804d3f0633",
+        "size": 457
+      },
+      {
+        "path": "config/attributefix/ftbultimine/max_blocks_modifier.json",
+        "sha256": "838f25c55c1adc889f5c14b94ddf7434c5eccf521dc8c3c93d46a0804d3f0633",
+        "size": 457
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.armor.json",
+        "sha256": "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439",
+        "size": 389
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.armor_toughness.json",
+        "sha256": "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439",
+        "size": 389
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.attack_damage.json",
+        "sha256": "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439",
+        "size": 389
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.attack_knockback.json",
+        "sha256": "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439",
+        "size": 389
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.attack_speed.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.burning_time.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.explosion_knockback_resistance.json",
+        "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
+        "size": 379
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.fall_damage_multiplier.json",
+        "sha256": "6217856e9bb2355a468bbe03fe24bc97bae91f8deb54e9df42f8a4021cde99e6",
+        "size": 383
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.flying_speed.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.follow_range.json",
+        "sha256": "43aa2701d17e26c045533a5b0500fa8c0639d4e62adcccd389ba3426378a80c0",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.gravity.json",
+        "sha256": "84207d0866413a367d92222bd193912a418615f5eb9da342057bafec30173a79",
+        "size": 381
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.jump_strength.json",
+        "sha256": "220b18479d9b6497fc95e3b2ffcca5014d93eca33153fab8f343151c9a553bde",
+        "size": 381
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.knockback_resistance.json",
+        "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
+        "size": 379
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.luck.json",
+        "sha256": "6bce4756f23cedf273e963254625fa594a32208f99de05db1abd1e77ec671372",
+        "size": 393
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.max_absorption.json",
+        "sha256": "43aa2701d17e26c045533a5b0500fa8c0639d4e62adcccd389ba3426378a80c0",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.max_health.json",
+        "sha256": "9d0ae1c8fda340e80aac17df9999ec1e9c7396a2327f63a40ea8006991201305",
+        "size": 389
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.movement_efficiency.json",
+        "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
+        "size": 379
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.movement_speed.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.oxygen_bonus.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.safe_fall_distance.json",
+        "sha256": "6bce4756f23cedf273e963254625fa594a32208f99de05db1abd1e77ec671372",
+        "size": 393
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.scale.json",
+        "sha256": "0e28210686e7f216d46ba0fee2508c263c7c39e26fb6d8380404789d3185e73a",
+        "size": 387
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.step_height.json",
+        "sha256": "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0",
+        "size": 381
+      },
+      {
+        "path": "config/attributefix/minecraft/generic.water_movement_efficiency.json",
+        "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
+        "size": 379
+      },
+      {
+        "path": "config/attributefix/minecraft/player.block_break_speed.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/minecraft/player.block_interaction_range.json",
+        "sha256": "137e8a8052b2264bc1c881b91b97011e4c33726819f4c434753ad5480ee3d19f",
+        "size": 381
+      },
+      {
+        "path": "config/attributefix/minecraft/player.entity_interaction_range.json",
+        "sha256": "137e8a8052b2264bc1c881b91b97011e4c33726819f4c434753ad5480ee3d19f",
+        "size": 381
+      },
+      {
+        "path": "config/attributefix/minecraft/player.mining_efficiency.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/attributefix/minecraft/player.sneaking_speed.json",
+        "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
+        "size": 379
+      },
+      {
+        "path": "config/attributefix/minecraft/player.submerged_mining_speed.json",
+        "sha256": "f874427dd6754eff702ef41fd35649493094ddd0c79e01623a2cc9ccfe8ce8d7",
+        "size": 381
+      },
+      {
+        "path": "config/attributefix/minecraft/player.sweeping_damage_ratio.json",
+        "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
+        "size": 379
+      },
+      {
+        "path": "config/attributefix/minecraft/zombie.spawn_reinforcements.json",
+        "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
+        "size": 379
+      },
+      {
+        "path": "config/attributefix/porting_lib/swim_speed.json",
+        "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
+        "size": 385
+      },
+      {
+        "path": "config/axesareweapons.json5",
+        "sha256": "0abb77ff7bac93972090e77b8171d3f7976c500ed2be4bd946826abd17db200a",
+        "size": 389
+      },
+      {
+        "path": "config/betteradvancements.json",
+        "sha256": "82ffaabd04cb676394314ad57bacb68b9160d2d8fec5109f1f106115e71417af",
+        "size": 597
+      },
+      {
+        "path": "config/bettercaves/README.txt",
+        "sha256": "e6f25132180339d5b7f53c1f5473f28cdf743f76292bc8f87142e4b0300e0f2c",
+        "size": 546
+      },
+      {
+        "path": "config/bettercaves/fabric-1_21_1/README.txt",
+        "sha256": "1dc29f3ad9f62887f2667aeaed28c3fd3a2520055382ecb3636e3cb9ea563baa",
+        "size": 743
+      },
+      {
+        "path": "config/bettercaves/fabric-1_21_1/liquidregions.json",
+        "sha256": "ad0e43cd1d8fff16d76ff6036699bd67598ff8bc18220b7e8e951245c92cf139",
+        "size": 168
+      },
+      {
+        "path": "config/bettercombat/client.json5",
+        "sha256": "2d853633deff976b16e7e973c168134886fe8c06ec5108a077d835db97b5ff18",
+        "size": 721
+      },
+      {
+        "path": "config/bettercombat/fallback_compatibility.json",
+        "sha256": "754feb4474a3f4d9fe6bd08f38c248fd5a796ed51f38d7d5704680250f3a34ca",
+        "size": 2995
+      },
+      {
+        "path": "config/bettercombat/server.json5",
+        "sha256": "3f50d34e55861d3ca4d9557bf21c154d297abe01f37d11c6a84d70a2255b5e83",
+        "size": 6207
+      },
+      {
+        "path": "config/bettercombat/weapon_trails.json",
+        "sha256": "fd14cc025b6d6c54bc2ddff136f0298c0ba132dbe98c2c9c845b47b8286fc45c",
+        "size": 7127
+      },
+      {
+        "path": "config/betterdeserttemples-fabric-1_21.toml",
+        "sha256": "06a1b8b7774df6bef4dc9b82e140a4211d41c93178ee0d9d25105d05a6c20566",
+        "size": 66
+      },
+      {
+        "path": "config/betterdeserttemples/README.txt",
+        "sha256": "65f27b868cd42591c8c0be68c73f95490a409e90c3005baa809c4b907a6a03c3",
+        "size": 718
+      },
+      {
+        "path": "config/betterdeserttemples/fabric-1_21/README.txt",
+        "sha256": "80ba474fdd1912739a1dc3326de6539ccfceb9d5c97f540131b567e295a7b112",
+        "size": 1683
+      },
+      {
+        "path": "config/betterdeserttemples/fabric-1_21/armorstands.json",
+        "sha256": "12b6d218a9a6a91e38db764fc46eb353482bd9249ce2aa043cfdd993ae9b65eb",
+        "size": 1344
+      },
+      {
+        "path": "config/betterdeserttemples/fabric-1_21/itemframes.json",
+        "sha256": "74f8c0759a31dc6457f33b452a1eccf913ce9bf0fb4565106490966470e92279",
+        "size": 824
+      },
+      {
+        "path": "config/betterdungeons-fabric-1_21.toml",
+        "sha256": "c0809814af173f138d83495d36aabcccda93ba2f2a49ec5b7e1c87a201efee77",
+        "size": 418
+      },
+      {
+        "path": "config/betterendisland-fabric-1_21.toml",
+        "sha256": "6469ab87a66387d64bfc51ffe2fb1365fcda9a28121a8fa9227626430c0c3505",
+        "size": 195
+      },
+      {
+        "path": "config/betterfortresses-fabric-1_21.toml",
+        "sha256": "c6f718e24389dd618b788ea1ef0c64d3689e9408fd9a482e67ecece0dc392ece",
+        "size": 42
+      },
+      {
+        "path": "config/betterfortresses/README.txt",
+        "sha256": "3efc54726c0702d0a4d4a91eb6436acdd3842598460e5781ffe365353ee36cc2",
+        "size": 871
+      },
+      {
+        "path": "config/betterfortresses/fabric-1_21/README.txt",
+        "sha256": "1175dbf9cd2e7c91b1c852a51e3c0203c68484917e877465b283e2370ad62864",
+        "size": 1339
+      },
+      {
+        "path": "config/betterfortresses/fabric-1_21/itemframes.json",
+        "sha256": "e12974b30d8bb29a8c6d174297f43258a1b07ed16136a829c106e3e55b0e0cbc",
+        "size": 1161
+      },
+      {
+        "path": "config/betterjungletemples-fabric-1_21.toml",
+        "sha256": "69a3aa51ef5a881f01a6515f72a57a10b8df7c7b93588f424fc07c864a0933e1",
+        "size": 65
+      },
+      {
+        "path": "config/bettermineshafts-fabric-1_21.toml",
+        "sha256": "d486f4672659b59f9a855d9ebce345d8a983c504d24b99613ce280db657c40f5",
+        "size": 595
+      },
+      {
+        "path": "config/betteroceanmonuments-fabric-1_21.toml",
+        "sha256": "dbba9af53d8bfb9f46cb4c9ab525a72026ad0a13c36e8dd8efe7398a767c3187",
+        "size": 41
+      },
+      {
+        "path": "config/betterstrongholds-fabric-1_21.toml",
+        "sha256": "6884b0d763e06d77fe7a2e8e9acbc201014fc8135c7dcba47be30fab9a634a11",
+        "size": 86
+      },
+      {
+        "path": "config/betterstrongholds/README.txt",
+        "sha256": "80929d21617faef8983985d92096ad903602a6d82106b5e845562814872da6c7",
+        "size": 710
+      },
+      {
+        "path": "config/betterstrongholds/fabric-1_21/README.txt",
+        "sha256": "c857bda54ab01ca5db21cfe085dc75dcbb13d26054463cf301c74023783612fc",
+        "size": 2817
+      },
+      {
+        "path": "config/betterstrongholds/fabric-1_21/armorstands.json",
+        "sha256": "946768eed3f8cb458a1fa3b8befae9afe2e9b701d98c97d3cca5630316cd65cc",
+        "size": 1391
+      },
+      {
+        "path": "config/betterstrongholds/fabric-1_21/itemframes.json",
+        "sha256": "6d5f2887582f58c190ec5b06215059a692dba14915304b70650607fefe750604",
+        "size": 920
+      },
+      {
+        "path": "config/betterstrongholds/fabric-1_21/ores.json",
+        "sha256": "75efd7244e5edb91952278dcffe056767f32909b0a4cfa978a3293b22873bb8a",
+        "size": 346
+      },
+      {
+        "path": "config/betterstrongholds/fabric-1_21/rareblocks.json",
+        "sha256": "459d7e65151d59545db7cc4726f30fbfd6f22ab058fa6e16ceee6167da16e8c7",
+        "size": 238
+      },
+      {
+        "path": "config/betterwitchhuts-fabric-1_21.toml",
+        "sha256": "063ce4f60934ab166dade45375ef5518df74be2c6c1e1f1a52ec181013803197",
+        "size": 41
+      },
+      {
+        "path": "config/biomesoplenty/biome_toggles.json",
+        "sha256": "adcd92e2dd2d6ca3528b4ded3a159fce6f4a3951e815d60494dc277d12289106",
+        "size": 2192
+      },
+      {
+        "path": "config/biomesoplenty/gameplay.toml",
+        "sha256": "b9abd11468b8f1a0a56024f78e27cc6d79c2cce4cce8754b1ba4f0f44289a741",
+        "size": 109
+      },
+      {
+        "path": "config/biomesoplenty/generation.toml",
+        "sha256": "428c8be557854161e82b21b5654d2865b9b0c53bba969f20398568f94d4ae030",
+        "size": 521
+      },
+      {
+        "path": "config/biomeswevegone/misc.json",
+        "sha256": "cbfac13949317e4e49f95e9cf16a7d9cb36d6d4b873eadf2329bae57bc3ff742",
+        "size": 494
+      },
+      {
+        "path": "config/biomeswevegone/mob_spawn.json",
+        "sha256": "b84dc298e495d19eb4b4c19482fac644aee55414b7e6e4bb1ea238de989e7970",
+        "size": 62
+      },
+      {
+        "path": "config/biomeswevegone/trades.json",
+        "sha256": "0b05a8814f09fead55b1901b7efab7d3ab87227ea3fc6b5e65a6197261832710",
+        "size": 639
+      },
+      {
+        "path": "config/biomeswevegone/world_generation.json",
+        "sha256": "6fb6ff3e2cb4d1c47431b2e9fb48090fd985e0b43777949ec0c346cda85e532d",
+        "size": 4196
+      },
+      {
+        "path": "config/bridgingmod.json",
+        "sha256": "2f3b312ba9110f5af338d362b35f09c442c01cc4cb9187da9626de7cc10e2d01",
+        "size": 837
+      },
+      {
+        "path": "config/capes.json5",
+        "sha256": "4e9200004d059501f2d5b122a56a311688762483d21d05ba95ae84edafc67aa8",
+        "size": 240
+      },
+      {
+        "path": "config/cardinal-components-api.properties",
+        "sha256": "8d3ae8c9240fc60475fbb98a87b7e2e0874703b173a449fb346fb0857ada7bba",
+        "size": 452
+      },
+      {
+        "path": "config/chat_heads.json5",
+        "sha256": "e198750061411cf7fca624e38b894ca104ca2cf2c2940da0409ce4240dcc2503",
+        "size": 229
+      },
+      {
+        "path": "config/comforts-common.toml",
+        "sha256": "1f21c10bfce9cd25aea641046a79df88867f68ba8ba3838a5e1662521f9f06a2",
+        "size": 189
+      },
+      {
+        "path": "config/comforts-server.toml",
+        "sha256": "f6df47d3f1002fde8d9e59c8068acbc39e976b3392e8fd528dc9b38b2856c5a0",
+        "size": 1852
+      },
+      {
+        "path": "config/continuity.json",
+        "sha256": "00267a602028cbb037dcb0b5f803db31bed284235ca9c1ea189ad4179311a2f4",
+        "size": 122
+      },
+      {
+        "path": "config/craftpresence.json",
+        "sha256": "fd6e47b60828f82b6090c3a80a4b10e7be5fda9a7538bf25bc19dfdeeea6ca23",
+        "size": 4353
+      },
+      {
+        "path": "config/crash_assistant/config.toml",
+        "sha256": "acb9db38e874406bf84b01c96f39aef5becde8721dfd91c25b3f4cdc263e4475",
+        "size": 24218
+      },
+      {
+        "path": "config/crash_assistant/crash_assistant_localization_overrides/README.md",
+        "sha256": "943e1c3672b8a03f27519b357091133205119c7b3db2fcc4c25b597cabf8926d",
+        "size": 2650
+      },
+      {
+        "path": "config/crash_assistant/scripts/log_analysis/example.jexl",
+        "sha256": "adde7e5e42b9d716f14a9bc49797999a21a0ee05cc67e71410a232f830115b3b",
+        "size": 3495
+      },
+      {
+        "path": "config/crash_assistant/scripts/startup/example.jexl",
+        "sha256": "346378f04a9e7319cdcb405fad82d6e7f1b36b39e0e4129c00a226b49f41cf37",
+        "size": 4408
+      },
+      {
+        "path": "config/creativecore-client.json",
+        "sha256": "acb6c8c1394d4d6f2d0c98d5c314c5ef8ad34b8a76f0a420fc596733bcbc51ac",
+        "size": 23
+      },
+      {
+        "path": "config/creeperoverhaul.jsonc",
+        "sha256": "d8088bd461dd7666552c4174bac6549e55112728e07aa3addd0e32a805c230fc",
+        "size": 1913
+      },
+      {
+        "path": "config/crepperoverhaul-client.jsonc",
+        "sha256": "8ebd8ce17fd98dc18dde0d3271b9237fbc98d9664647940308c9a4d7804dc200",
+        "size": 389
+      },
+      {
+        "path": "config/crittersandcompanions-common.json5",
+        "sha256": "6c71ae8e49bbd1da8e98d86e218db5479e62a540cf44c4df49426e4d2b690209",
+        "size": 3836
+      },
+      {
+        "path": "config/cumulus_menus-client.toml",
+        "sha256": "e7d3bcb15179eb4e3e46da5483d61dd7a5222abfeaa9cecdc84da5dccc4331fa",
+        "size": 749
+      },
+      {
+        "path": "config/cutthrough-client.toml",
+        "sha256": "0f1e7df65dc4fcff84594a708ebed689598dd05dec4cfca38e9f807ca817c5c0",
+        "size": 247
+      },
+      {
+        "path": "config/deeperdarker.json5",
+        "sha256": "f57c172c87a55b02298ab2ec85ecf5775d8b7e398e002e9917c78a8bae5ed60a",
+        "size": 854
+      },
+      {
+        "path": "config/dummmmmmy-client.json",
+        "sha256": "795514f280cf87dfa5aeb6efc363369b86ae9a90c0b8d1587d56bee9e1c005fa",
+        "size": 965
+      },
+      {
+        "path": "config/dummmmmmy-common.json",
+        "sha256": "082bdc5751d65a60a5d036607c80da6b8aa2aa5e42ec4517011609bf97ab9258",
+        "size": 451
+      },
+      {
+        "path": "config/easymagic-client.toml",
+        "sha256": "2ad457c78882a34057f2fb5748398e9614a7fb5e491e8a868534de40cd2c1c6d",
+        "size": 1171
+      },
+      {
+        "path": "config/easymagic-common.toml",
+        "sha256": "7a98b95d82e470d071fd0f51d97f4fceb59f7de4af3129e9447f7241f8cac700",
+        "size": 368
+      },
+      {
+        "path": "config/enhanced_attack_indicator.json",
+        "sha256": "8e73ddcc33113050a80b4ef7dd890bfe0ebe85ca6b069d670213f83d89f75c60",
+        "size": 280
+      },
+      {
+        "path": "config/entity_model_features.json",
+        "sha256": "4d13dfd4a71e0f9b0e6f673233856185f10bc2465916d7e43ace4e3621334067",
+        "size": 1258
+      },
+      {
+        "path": "config/entity_texture_features.json",
+        "sha256": "bd66edf9d1a72cd717bbe9b17b41ffd16963b089493e5ddae3d3ad69153105ba",
+        "size": 1452
+      },
+      {
+        "path": "config/entityculling.json",
+        "sha256": "4a6d510b7e0157027b1cf2022184567fd5387aa09d08db108cb0369ba371ddbe",
+        "size": 2248
+      },
+      {
+        "path": "config/etf_warnings.json",
+        "sha256": "a5ba22e63061c1fb67f0f895f17681351eaeccc225faef966c29ee630593275e",
+        "size": 28
+      },
+      {
+        "path": "config/euphoria_patcher/.data.json",
+        "sha256": "3060c725950a6de9c57d21df7c3797ab1a4d1799787af051c51759864b06d42c",
+        "size": 164
+      },
+      {
+        "path": "config/euphoria_patcher/settings.toml",
+        "sha256": "13aee892d000bdd43d88178fbcaa96549f28ae4ae528e1f1eacaf791742f9ec6",
+        "size": 4012
+      },
+      {
+        "path": "config/explorerscompass.json",
+        "sha256": "463441d3cf88b9bcae3a92d0dc6aaa6dd8d2779f86e0e04bb4f5fab06f2dc536",
+        "size": 2833
+      },
+      {
+        "path": "config/fabric/indigo-renderer.properties",
+        "sha256": "4009f92e81977cf24c4922854c7bac661a12f259d5a58e486d47ade483b225f9",
+        "size": 290
+      },
+      {
+        "path": "config/farmersdelight-client.json",
+        "sha256": "bc7d65ca1c81b0316131863b10385e8790e57fdd4f3ec53bc1fc53fce489fe53",
+        "size": 281
+      },
+      {
+        "path": "config/farmersdelight-common.json",
+        "sha256": "9a45925a70ea25782a2465053ff587338c62b3e907f75509ec61e6e535857fe0",
+        "size": 1284
+      },
+      {
+        "path": "config/ferritecore.mixin.properties",
+        "sha256": "bdd54ad580fc678a117e4f559daaed5ebbe0dde176127ddb95dd2d5e5b4e4818",
+        "size": 1615
+      },
+      {
+        "path": "config/forgeconfigapiport.toml",
+        "sha256": "40dbe5b348f89b8ded62bcdfe32807ffc3e78fa8e0f81607a739580019fe5450",
+        "size": 523
+      },
+      {
+        "path": "config/ftbchunks-client.snbt",
+        "sha256": "dedece9dde376539875056acbbf1274e1fadc847a07b7c388884e5091b31572b",
+        "size": 8002
+      },
+      {
+        "path": "config/ftblibrary-client.snbt",
+        "sha256": "79261c26a2fd6ba3ee6b96ae3ae59587e334558037a4f62d701cf4af0826ea0f",
+        "size": 1801
+      },
+      {
+        "path": "config/ftbultimine-client.snbt",
+        "sha256": "67dadd3f0812bc01a0b0ca6fb204961512ce1332e97fe42dba2cb57813a496ef",
+        "size": 1824
+      },
+      {
+        "path": "config/fzzy_config/keybinds.toml",
+        "sha256": "26ac5810c9b5dc5c1968827357f0a58c58ac2b6f7b082630960228e16585062f",
+        "size": 6403
+      },
+      {
+        "path": "config/highlighter.toml",
+        "sha256": "1d0ca575f3f59697b4d0103b85ca5884217458fb7ab9a3023c9daa7ed0e3d9e7",
+        "size": 716
+      },
+      {
+        "path": "config/immediatelyfast.json",
+        "sha256": "a6c9d147a51c9e432c5c74c00285cfc5ba8b6fa4a0c6686051a7168b158d0d7a",
+        "size": 1114
+      },
+      {
+        "path": "config/iris-excluded.json",
+        "sha256": "4d3264b58c502afaeca3f44e8d2db0843c54b8ba957afd21a2d450fe10dafefb",
+        "size": 31
+      },
+      {
+        "path": "config/iris.properties",
+        "sha256": "f3a4f3422346b59b904f9f664d80f01f26db14620cff8d658bfa72c09908fb0c",
+        "size": 314
+      },
+      {
+        "path": "config/jade/hide-blocks.json",
+        "sha256": "309df4ae96864c19eae41b646d58497c85a73b1fc3c584e772ef4d5822794baa",
+        "size": 149
+      },
+      {
+        "path": "config/jade/hide-entities.json",
+        "sha256": "3741bb54a4535fb5a00fb0ee1f4386f3dd17834aebdf9e89c21fcd3307109709",
+        "size": 243
+      },
+      {
+        "path": "config/jade/jade.json",
+        "sha256": "f9f68a1557cdfab8394d2f4b54a2756d96451dcdddea4f5e04cb912b516ffa05",
+        "size": 1089
+      },
+      {
+        "path": "config/jade/plugins.json",
+        "sha256": "e1c8f2118f205e2e8a9d4f6bed15e87423f66419d451ee1516d1ade621fa0d31",
+        "size": 2137
+      },
+      {
+        "path": "config/jade/sort-order.json",
+        "sha256": "e6f027889d28befe74908378fa7d30ba68de9b70a0ac541fffd9ce228eb12f6f",
+        "size": 2117
+      },
+      {
+        "path": "config/jamlib/known_suspicious_jars.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      {
+        "path": "config/jei/client/default/jei-client.ini",
+        "sha256": "7e410776dfa65503cac6eb55ecd89ddce4c2c2c1b862e6cf6e7649ca40b00cda",
+        "size": 16752
+      },
+      {
+        "path": "config/jei/client/default/jei-colors.ini",
+        "sha256": "c6d4ae48280627d04a7ae2b6d3db65e71d73670a72732f5aed9f4cfaac3837c7",
+        "size": 1655
+      },
+      {
+        "path": "config/jei/client/default/jei-debug.ini",
+        "sha256": "376cc883cac002d07792f209f7bc1915ea7fa8822effc67734f1589bab9bb806",
+        "size": 1174
+      },
+      {
+        "path": "config/jei/client/default/jei-mod-id-format.ini",
+        "sha256": "2e5119684366f75bc8a6df871381c6094a812cadd0d5ed0547405b5f1353f9e1",
+        "size": 863
+      },
+      {
+        "path": "config/justenoughbreeding-offsets.json",
+        "sha256": "eac041b52f6f62f54b64495bd5ae3e3fd6f50830594ca614e9606407cd58c126",
+        "size": 2961
+      },
+      {
+        "path": "config/justenoughbreeding.json",
+        "sha256": "3b3519f38d850e4eb869d00d75b5e4dc664950959564aaf90c7ab7ccc6448a3c",
+        "size": 35
+      },
+      {
+        "path": "config/lambdynlights.toml",
+        "sha256": "fdd6958ff17541c8d1c891bd1602088bb6888f41229e966387a07311f32ec6d9",
+        "size": 1448
+      },
+      {
+        "path": "config/legendarytooltips.toml",
+        "sha256": "97032a97427d72e79f2561eb246c64ed30e97c4cfff49220cb1dbd8fdb1f561a",
+        "size": 9259
+      },
+      {
+        "path": "config/lithium.properties",
+        "sha256": "6cf6f83720071fd1657c8e79b357caf68d40f410ae123e5f922483eb1d1d25be",
+        "size": 267
+      },
+      {
+        "path": "config/lithostitched.json",
+        "sha256": "ce8ab190281862b0554c92043c2bf8af106fbe4116bcd6dab433f6506781dbc0",
+        "size": 273
+      },
+      {
+        "path": "config/lootr.json",
+        "sha256": "1ca66f443b353d4054fe4ac78c31628c7d51544f53d3fc52899dae970766fe06",
+        "size": 2008
+      },
+      {
+        "path": "config/mezz_config/client/default/settings.ini",
+        "sha256": "1febf6ff1d35f4ffe34d6e5444e3c9496155a6abf3f49eb4ef5650d102645249",
+        "size": 1452
+      },
+      {
+        "path": "config/midnightlib.json",
+        "sha256": "9bcdd9f5ae6c9fecc3a0dfee7507bf17c56702f14e40db9cdde90148f1d3b387",
+        "size": 34
+      },
+      {
+        "path": "config/modelfix-client.json",
+        "sha256": "b55936928438ab49ebc8086579cd2218faf14d777fd15ec6eee895dbcadb667d",
+        "size": 207
+      },
+      {
+        "path": "config/moogs_structures.json",
+        "sha256": "c3516a4b53c902c0533869f7e0a83401a5273d75d4c92eab77a24ddb8f3374b8",
+        "size": 466
+      },
+      {
+        "path": "config/moonlight-client.json",
+        "sha256": "2e1fc3c9057e5279957ddae39140390c809fe1eef6c3c1585901ccbbaaad865b",
+        "size": 459
+      },
+      {
+        "path": "config/moonlight-common.json",
+        "sha256": "66b4381d7d2230f64c12f3a7109aa50e6a60af7974e52d0a546797bcd3efbfc8",
+        "size": 215
+      },
+      {
+        "path": "config/naturalist-client.properties",
+        "sha256": "9941309cd81cd0e732ecc91dec39f0c800f23d3d86f3a386fdbff3a31434b832",
+        "size": 82
+      },
+      {
+        "path": "config/naturalist-server.properties",
+        "sha256": "9b13ca06822a02f3d357ed626e761e2a9a6c4a7647dc4443c44cc7bdf84463cb",
+        "size": 1306
+      },
+      {
+        "path": "config/naturescompass.json",
+        "sha256": "3ae1ca2df618b3449ef0e9cadddf87af33ddefac4ac2542b0983d9b5ba25fd07",
+        "size": 2865
+      },
+      {
+        "path": "config/obscuria/aquamirae-client.toml",
+        "sha256": "e5810dff812f19681fd66c5b0348c4312e9f07e4a18741ec62b94eced2b498ea",
+        "size": 618
+      },
+      {
+        "path": "config/obscuria/aquamirae-common.toml",
+        "sha256": "39d606303bb24d21d3b0584b4ae2818070c3cbd486c6b07cc69393ac00518a31",
+        "size": 5967
+      },
+      {
+        "path": "config/overflowingbars-client.toml",
+        "sha256": "9037e801784c5d10420d23445e1086e8ac39480bce15eef4b73d9b519a373561",
+        "size": 3869
+      },
+      {
+        "path": "config/regions_unexplored/client.json",
+        "sha256": "219a24a03c06a9171e1b04e1bd361a9332905dd79d0b94a4c805b4358a41ee1d",
+        "size": 309
+      },
+      {
+        "path": "config/regions_unexplored/common.json",
+        "sha256": "d7f2b587b17e79e4f53984252be21832d30039f65038f3a0a71f0c80ab6815ca",
+        "size": 21803
+      },
+      {
+        "path": "config/resourceful-config-web.json",
+        "sha256": "f1ff6eb9f034e55ab17dd54d8ec65d878dbe4346d2602beeb8ca82901ad42ce0",
+        "size": 196
+      },
+      {
+        "path": "config/ribbits-fabric-1_21_1.toml",
+        "sha256": "0471379b8c6f11b6d0f32d894f48fbc8a6a7ddd783128ae3ac03dfe65d3b752c",
+        "size": 35
+      },
+      {
+        "path": "config/ribbits-options.json",
+        "sha256": "671ee75b5333f98d3a9b92fcfcc79c7df7a6b4c0e5cda025a7b449ab79562b2b",
+        "size": 33
+      },
+      {
+        "path": "config/rightclickharvest.json5",
+        "sha256": "6eb5169563472ae96184c94e9f42ff7d76fdba403ed3190ffb308e817ea0a21e",
+        "size": 609
+      },
+      {
+        "path": "config/sereneseasons/fertility.toml",
+        "sha256": "f63f94b985285add146c73a8747d278cec3d386807855b25de0e1db9962c153f",
+        "size": 481
+      },
+      {
+        "path": "config/sereneseasons/seasons.toml",
+        "sha256": "2b7b46e2e89ee0aa1bed48bf91d9d9591237f377acde62278f95ca9ea7f5f9c0",
+        "size": 21059
+      },
+      {
+        "path": "config/serilum/collective.json",
+        "sha256": "f41ad25ed0e7d6959ca361b5b837140f8ab178c39b65e6d32cd9359c1d663c5f",
+        "size": 3147
+      },
+      {
+        "path": "config/serilum/doubledoors.json",
+        "sha256": "ae85d0e91ab0306f2d536cfb1bb6d114f94c385aa466d62de7ba20d2c4bdb8ea",
+        "size": 1649
+      },
+      {
+        "path": "config/serilum/starterkit.json",
+        "sha256": "be68798d1e564b2309f27fdc876f3742cd9a03c9c2e371bca4da6c478ec61acb",
+        "size": 3165
+      },
+      {
+        "path": "config/serilum/starterkit/commands/Default.txt",
+        "sha256": "0cae73559c570c6b338502348a2ca6a0ed07e88e413491a0b5610261e27d7a21",
+        "size": 258
+      },
+      {
+        "path": "config/serilum/starterkit/descriptions/Archer.txt",
+        "sha256": "2ea003ce1408175d33f2bf55cb2de60b7aca7d652b922a84ec52d7d77eb99b64",
+        "size": 57
+      },
+      {
+        "path": "config/serilum/starterkit/descriptions/Default.txt",
+        "sha256": "19df01c903be0cc0216fbca05181ff06c2aff09f2ef213e78ea93f82d2cb1324",
+        "size": 125
+      },
+      {
+        "path": "config/serilum/starterkit/descriptions/Lumberjack.txt",
+        "sha256": "5091e1a2d5a2927fe1d8f6a6a233ace60f2407be05384f3140b839e9ad3a041a",
+        "size": 52
+      },
+      {
+        "path": "config/serilum/starterkit/descriptions/Witch.txt",
+        "sha256": "290f6b832794b6876aba9da963b585ba4e99e5e6a972aebb52810e9a256e2f65",
+        "size": 52
+      },
+      {
+        "path": "config/serilum/starterkit/kits/Default.txt",
+        "sha256": "4554f1366724aa5b7cbdf54f949664178c221685e2600e1646fef0341d520b7a",
+        "size": 577
+      },
+      {
+        "path": "config/serilum/starterkit/kits/inactive/Archer.txt",
+        "sha256": "da428925f985e0dd610de8cd21e8ff5c433b3c08e8fa02cad65353fc2de9fb77",
+        "size": 683
+      },
+      {
+        "path": "config/serilum/starterkit/kits/inactive/Lumberjack.txt",
+        "sha256": "e9ed3b597e1cff6e3f01f1a6ef16bc35181c7e1a4c6556b8399b5ea41d0d278f",
+        "size": 655
+      },
+      {
+        "path": "config/serilum/starterkit/kits/inactive/Witch.txt",
+        "sha256": "acf56d3d8e4737cf8fc0be14eab977a9eb266a57e004ed2e67c7882a249a62bb",
+        "size": 1115
+      },
+      {
+        "path": "config/servercore/config.yml",
+        "sha256": "979782b051282b6082331a59d2a42b2fa20bfdf0a32180d44df13cd60eff1312",
+        "size": 12290
+      },
+      {
+        "path": "config/servercore/optimizations.yml",
+        "sha256": "63ba7034fdf1f45f1b40798d3212f8d838f7c299fbe5795075fbafe1e2265192",
+        "size": 1392
+      },
+      {
+        "path": "config/skinlayers.json",
+        "sha256": "45162f45aa2db525a0edc483959f35b6d958ba2e54066a4f87e7f3c3f0f99166",
+        "size": 497
+      },
+      {
+        "path": "config/sodium-fingerprint.json",
+        "sha256": "5c3b6421a416f7777430d63575668dc1780dc4912f8f377d2d24ae411a27721f",
+        "size": 427
+      },
+      {
+        "path": "config/sodium-mixins.properties",
+        "sha256": "b627c4456e6fa0bc4b5f85e2f1cd949faedae3cb9afdaf2a5f52e6f3b6ae1f01",
+        "size": 258
+      },
+      {
+        "path": "config/sodium-options.json",
+        "sha256": "44478bef0973f1aa587c0493568a5cbc5426233b611f14bd2be489b5b862fa7f",
+        "size": 762
+      },
+      {
+        "path": "config/sophisticatedbackpacks-common.toml",
+        "sha256": "390cb983090cdc5ba9013c0551fcde8ecf579040f970e33de5ecfc500841cb7f",
+        "size": 118
+      },
+      {
+        "path": "config/sophisticatedcore-client.toml",
+        "sha256": "c298f506a9243beba0f3a3ca52199dc8058ac6d1e5357a533549bfd18fbdc63e",
+        "size": 347
+      },
+      {
+        "path": "config/sophisticatedcore-common.toml",
+        "sha256": "6928810eacfc20c8568759fc8c142df5f643e790f5c97c082719d65656274ff8",
+        "size": 108
+      },
+      {
+        "path": "config/sophisticatedstorage-client.toml",
+        "sha256": "cbb1a5e4f7b9b3719562c623340b2db2e64717e9ceaf9c713d2dfc67dd50ab7e",
+        "size": 399
+      },
+      {
+        "path": "config/sophisticatedstorage-common.toml",
+        "sha256": "0c721ecf8a9a6fba8402b7ce73bf8580acdd078e9ac9c3b37c42245ca6d8c4b0",
+        "size": 186
+      },
+      {
+        "path": "config/spark/tmp/about.txt",
+        "sha256": "d7514c0ddb6ae8611a281527bf04ca6cbcea1fa21758534fdcd08ed0f51c19c0",
+        "size": 585
+      },
+      {
+        "path": "config/storagedrawers-client.toml",
+        "sha256": "ecc9c067701d3fa9a12f95e0a88ba061d7c0fead8eb3a720eccc873086a80ed1",
+        "size": 937
+      },
+      {
+        "path": "config/storagedrawers-common.v2.toml",
+        "sha256": "e318504bc6a17e764793e4542f415812f5ba99bd1954b423c3d0e0dfc9c35f4b",
+        "size": 14393
+      },
+      {
+        "path": "config/terrablender.toml",
+        "sha256": "cff6a9a0d415b19b9852844c0ad5bb2b1cfdb9fce12e729e7228a6521fc95927",
+        "size": 988
+      },
+      {
+        "path": "config/terralith.json",
+        "sha256": "eadc7fad5ce55fbcec25df521820d36c222d5b12f17006ed9fea34ebeb6fd01d",
+        "size": 212
+      },
+      {
+        "path": "config/torchmaster-config.json5",
+        "sha256": "2b7105c8e22fa4a421e80a73b36f7e0066ad434499aff41dee19ba7861b8b4a0",
+        "size": 338
+      },
+      {
+        "path": "config/transition.json",
+        "sha256": "60420a41571a4658b91babfa2b47d6fefb7c1766eeea969f51ff98ab34c2431c",
+        "size": 97
+      },
+      {
+        "path": "config/trender.json",
+        "sha256": "0a282f3623f7f9443a1d10b5768865f69e58b74e000dcfb4f40399626b7a6124",
+        "size": 47
+      },
+      {
+        "path": "config/visualworkbench-client.toml",
+        "sha256": "d4618e607b629668b7f10e8641667c2104799627546173a142f45317f773b7d3",
+        "size": 459
+      },
+      {
+        "path": "config/voicechat/category-volumes.properties",
+        "sha256": "94c1c4f70e5b995fbd71e86d4fa646030437fecae0685875b560a55fbd0d0e56",
+        "size": 46
+      },
+      {
+        "path": "config/voicechat/player-volumes.properties",
+        "sha256": "0332261861a5ace96f503e85b0d48a8df74ea6c2f3545cd229543a6afb55ad96",
+        "size": 44
+      },
+      {
+        "path": "config/voicechat/translations.properties",
+        "sha256": "693643b1d393cbb3ea7f062afc4474fcd66e4036c4f8d7c056434979cbf512d1",
+        "size": 1182
+      },
+      {
+        "path": "config/voicechat/voicechat-client.properties",
+        "sha256": "896f2bf5445be66592d10ad3467fa5832841256f5107abee81185a8072780bb2",
+        "size": 5063
+      },
+      {
+        "path": "config/voicechat/voicechat-server.properties",
+        "sha256": "a23c55534c796d5e04d4cba6f8cae3b380a12229d2f7ca5d487c3d191e6d333e",
+        "size": 3072
+      },
+      {
+        "path": "config/waystones-common.toml",
+        "sha256": "fac79f966db031e54807c1dcdfdf439aab14d464710a07b9e3c5750582287002",
+        "size": 6071
+      },
+      {
+        "path": "config/xaero/lib/client.cfg",
+        "sha256": "43ed9dbfa5b4d6f0f3d2e8c2ced17ad298164b22c68ff11d415257a39b074336",
+        "size": 26
+      },
+      {
+        "path": "config/xaero/lib/common.cfg",
+        "sha256": "98f698d96a6d21d830a455b4ad045b70516fa63c298021742d8499e7f0366cd2",
+        "size": 236
+      },
+      {
+        "path": "config/xaero/lib/profiles/default.cfg",
+        "sha256": "34ae854b17d896d7cb853bdc28c27231a3947e91cb9f0991f372846ee3c2a907",
+        "size": 121
+      },
+      {
+        "path": "config/xaero/lib/server_profiles/default.cfg",
+        "sha256": "d438aea41ca41e93697e059f523686935c0add482f6abe96b532bbf10c6ed80a",
+        "size": 75
+      },
+      {
+        "path": "config/xaero/minimap/client.cfg",
+        "sha256": "c0915eff5d1a7905cd1038d646eb9086fd1a29e2f637d53535e4da161de17b9f",
+        "size": 235
+      },
+      {
+        "path": "config/xaero/minimap/common.cfg",
+        "sha256": "2b49df024c03a369c62a303c72755e7fedeb4f4653ff53a12fd37bd83ccd4ed0",
+        "size": 147
+      },
+      {
+        "path": "config/xaero/minimap/default_radar_categories_client.json",
+        "sha256": "8ec85ecdff2a7b60389a80cbffa420876fcf83b3a72120e3564076da50dc3fca",
+        "size": 5531
+      },
+      {
+        "path": "config/xaero/minimap/default_radar_categories_server.json",
+        "sha256": "a4c652cafa7dea324e5f5cf3b1df46a84e54b6d4f877195857bce55a559c1cfd",
+        "size": 4597
+      },
+      {
+        "path": "config/xaero/minimap/profiles/default.cfg",
+        "sha256": "53b57c6a7bc117d6c2bc7a1fa8f1e5cbc963946d10f0de22fa55d2cb0929285e",
+        "size": 3737
+      },
+      {
+        "path": "config/xaero/minimap/server_profiles/default.cfg",
+        "sha256": "d438aea41ca41e93697e059f523686935c0add482f6abe96b532bbf10c6ed80a",
+        "size": 75
+      },
+      {
+        "path": "config/xaero/world-map/client.cfg",
+        "sha256": "d0f079a8df083f6f60a0e0c1316a25fc841755a91bdcb2f86c66ead8e7d4d13d",
+        "size": 521
+      },
+      {
+        "path": "config/xaero/world-map/common.cfg",
+        "sha256": "0c229eb0daf85bd09af51f21eeeb99497a3bd50a825d5ab1ca695fb21bf6cf9d",
+        "size": 141
+      },
+      {
+        "path": "config/xaero/world-map/profiles/default.cfg",
+        "sha256": "5422abf9c83fedef6509144293fad20f588d4bb6ce0cf1af78cbcd2bcd0d2ccf",
+        "size": 1619
+      },
+      {
+        "path": "config/xaero/world-map/server_profiles/default.cfg",
+        "sha256": "d438aea41ca41e93697e059f523686935c0add482f6abe96b532bbf10c6ed80a",
+        "size": 75
+      },
+      {
+        "path": "config/xaerohud.txt",
+        "sha256": "58c9270f258d0b224bb7d0f7c927544d5fbe5f1b8027c820e1e14ecbf48fb88c",
+        "size": 123
+      },
+      {
+        "path": "config/xaeropatreon.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      {
+        "path": "config/yacl.json5",
+        "sha256": "121b93764159be6fb7dab523b29a844e2bb78400ce8c48f52135a097e9b0006e",
+        "size": 250
+      },
+      {
+        "path": "config/zoomify.json",
+        "sha256": "82caee9b1f532332c798ee216c9a9ba5857c35e58afacba44946d9264fc05b36",
+        "size": 708
+      },
+      {
+        "path": "options.txt",
+        "sha256": "673d605e59e27f9a847fb4fa380f76c6e1fca8c05e32be60dd42a2fa53bf48e8",
+        "size": 11061
+      },
+      {
+        "path": "resourcepacks/Default-Dark-Mode-1.20.2+-2025.5.0.zip",
+        "sha256": "3f168a0a354a4f703ebc22b0bf011df4f2211b3e8b4b561e527c699bb7356ab2",
+        "size": 748843
+      },
+      {
+        "path": "resourcepacks/FA+All_Extensions-v1.10.1.zip",
+        "sha256": "10bcd8cfec9c70694ceaf37ec52e4b69f3a9b2fcab2ba67f202d6cbfcb7a38c9",
+        "size": 548952
+      },
+      {
+        "path": "resourcepacks/FreshAnimations_v1.11.2_1.20+.zip",
+        "sha256": "3a36e09638aa72f3b6e36fcfbcb4f9a3ba31a03b09e777466034bf75827c157e",
+        "size": 742790
+      },
+      {
+        "path": "resourcepacks/Low Fire.zip",
+        "sha256": "a761f00a176be2b09ac128e5b9eea9f70c742017ded12fb29b3583d70463193b",
+        "size": 42116
+      },
+      {
+        "path": "shaderpacks/ComplementaryReimagined_r5.10.zip",
+        "sha256": "4a61c33c87a7febe7ce898c51ca233683cd1d9854dd8fb7b0d039c88dec2fca2",
+        "size": 567387
+      },
+      {
+        "path": "shaderpacks/ComplementaryUnbound_r5.10.zip",
+        "sha256": "f19bf3268669576485124b7a717980f46b6200cde146fa181e794a2df0f9c2da",
+        "size": 567391
+      },
+      {
+        "path": "shaderpacks/MakeUp-UltraFast-9.6.zip",
+        "sha256": "71319ea5d0ad114143ef1c334890e315dbf1eeb2318d6bc35f3e5021fb3c8ba8",
+        "size": 406830
+      },
+      {
+        "path": "shaderpacks/Mellow v3.5.zip",
+        "sha256": "b46c5460cae9afe4d5b68bf6ac398661c01278d1c50b99070931f1477ecf8899",
+        "size": 1955122
+      },
+      {
+        "path": "shaderpacks/_0EUPHORIA_PATCHES_ERROR_LOGS.txt",
+        "sha256": "ffe21585299d6ef29ac79991abc2fc14fd07b733b9b24f742bb129e006d0e083",
+        "size": 2796
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/composite.fsh",
+        "sha256": "2da8190188f4193ba721ca47a5345672966daf0d096bb31e9893eac9daa239ae",
+        "size": 11989
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/composite.vsh",
+        "sha256": "7f4af2a622043316c8aa81c652eeec59372c8072757ab6c464017cc7a1a49f1d",
+        "size": 149
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/dh_terrain.fsh",
+        "sha256": "c0b208a9b26ba260bddf342d7b7ce701ae40dea7ea4b50d55c36adb2f1b92e8d",
+        "size": 335
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/dh_terrain.vsh",
+        "sha256": "a4fb2668955259ddcde2e0bade3df9f1976e193c29fb0f4c215de50e3ddf6890",
+        "size": 275
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/dh_water.fsh",
+        "sha256": "ef465a5e94c8579d6562948d9f5d08574fe6ac5bfe5be5d663f76dbf4d0408c2",
+        "size": 570
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/dh_water.vsh",
+        "sha256": "424b1acc09ac1650160c64215e233a584bcba015a6e58655219cb231e5422884",
+        "size": 275
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/errorTexts.glsl",
+        "sha256": "07c037123f50cbe1c5733491cad6ca9e90bd31c16ca960620491f76ea82fdee1",
+        "size": 2158
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/euphoria_patches.png",
+        "sha256": "fa04983ccb11769c0314187cd97a48109f0b0cbb686d5a095a9723629c8d2e50",
+        "size": 903
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/euphoria_patches.png.mcmeta",
+        "sha256": "3de8318bf3af133476ebbf215eb8b340113acb2576f397ae4e27175b05a10e57",
+        "size": 67
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_armor_glint.fsh",
+        "sha256": "2694c9c2b1da8288b4f0cd5206df45614053f67e4392c3f0488cebe5dc0925b0",
+        "size": 319
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_armor_glint.vsh",
+        "sha256": "7e8a7bb87c5b040c68da0fc762326d931b54f4e65233e845a97e32e25786260a",
+        "size": 390
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_basic.fsh",
+        "sha256": "87cca40c4e72d67e31c9062e08fa6c77ad38bfdc6e5079fe29a1476e73480918",
+        "size": 236
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_basic.vsh",
+        "sha256": "d7de3711d75a1f40691175ee8d85eed5247caef82a80b2999e23dbf9ad530fa5",
+        "size": 193
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_beaconbeam.fsh",
+        "sha256": "29f802600e1f40dadb7c13946caf267a3a37189bf290ff7e0379bf4d1105aeb1",
+        "size": 226
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_beaconbeam.vsh",
+        "sha256": "ed0bb03acf0de0a23b844683b7fedcc370d473c312ad3d9221c2c16229bb5dd7",
+        "size": 194
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_clouds.fsh",
+        "sha256": "29f802600e1f40dadb7c13946caf267a3a37189bf290ff7e0379bf4d1105aeb1",
+        "size": 226
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_clouds.vsh",
+        "sha256": "ed0bb03acf0de0a23b844683b7fedcc370d473c312ad3d9221c2c16229bb5dd7",
+        "size": 194
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_entities.fsh",
+        "sha256": "6c15918da2ad852272bf472e992b31dd62ba40553c857ff66193b2c4ae6d4ae4",
+        "size": 335
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_entities.vsh",
+        "sha256": "3f3257028da8770ca4341e682137a00f62017fd4b7fbef81e8c2da6bf274d45e",
+        "size": 344
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_hand.fsh",
+        "sha256": "6c15918da2ad852272bf472e992b31dd62ba40553c857ff66193b2c4ae6d4ae4",
+        "size": 335
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_hand.vsh",
+        "sha256": "3f3257028da8770ca4341e682137a00f62017fd4b7fbef81e8c2da6bf274d45e",
+        "size": 344
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_skybasic.fsh",
+        "sha256": "058575e347358f93ebda94d5ff9e03050af03c48189aea65e98a3da53979a496",
+        "size": 918
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_skybasic.vsh",
+        "sha256": "9a1312cccbbb23e722725f5a7ee9ad2247dbcae1b62b5c76d14f474a99798d12",
+        "size": 274
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_skytextured.fsh",
+        "sha256": "29f802600e1f40dadb7c13946caf267a3a37189bf290ff7e0379bf4d1105aeb1",
+        "size": 226
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_skytextured.vsh",
+        "sha256": "ed0bb03acf0de0a23b844683b7fedcc370d473c312ad3d9221c2c16229bb5dd7",
+        "size": 194
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_terrain.fsh",
+        "sha256": "6c15918da2ad852272bf472e992b31dd62ba40553c857ff66193b2c4ae6d4ae4",
+        "size": 335
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_terrain.vsh",
+        "sha256": "bee7b5644b0e8fc3217b1e8df75fa6a5382133b0458a4003d4d974a98e20f882",
+        "size": 343
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_textured.fsh",
+        "sha256": "6c15918da2ad852272bf472e992b31dd62ba40553c857ff66193b2c4ae6d4ae4",
+        "size": 335
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_textured.vsh",
+        "sha256": "3f3257028da8770ca4341e682137a00f62017fd4b7fbef81e8c2da6bf274d45e",
+        "size": 344
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_weather.fsh",
+        "sha256": "29f802600e1f40dadb7c13946caf267a3a37189bf290ff7e0379bf4d1105aeb1",
+        "size": 226
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/gbuffers_weather.vsh",
+        "sha256": "ed0bb03acf0de0a23b844683b7fedcc370d473c312ad3d9221c2c16229bb5dd7",
+        "size": 194
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/pack.json",
+        "sha256": "bfbd2be854be2baae6206431d91aa8d1d9eae2cfb5d31909339f032c38ba3b06",
+        "size": 242
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/shaders.properties",
+        "sha256": "cf6e17a0b73cc8e35793ba37e34d82d24506903847edddf9536fbe821fc9bda7",
+        "size": 123
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/textRenderer.glsl",
+        "sha256": "678e647de413d635b7486b3588850c82468bd91f3be5b11cfe4767d1163a7220",
+        "size": 11151
+      },
+      {
+        "path": "shaderpacks/_0EuphoriaPatches_ErrorShader/shaders/warning.png",
+        "sha256": "cfe6e53edbb804e87fd83d9b34a554de2b47c59ecfdc28cf4a13d923c6deeddf",
+        "size": 240
+      }
+    ]
+  }
 }
