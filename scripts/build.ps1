@@ -19,11 +19,23 @@ Set-Location $root
 function Fail($m) { Write-Host "ERROR: $m" -ForegroundColor Red; exit 1 }
 
 # --- JDK check (Gradle toolchains pick JDK 21 for compilation; Gradle itself needs 17+) ---
-$jv = "$(& java -version 2>&1 | Select-Object -First 1)"
-if ($LASTEXITCODE -ne 0 -or -not $jv) { Fail "java not found. Install JDK 21 and set JAVA_HOME." }
-if ($jv -notmatch '"(\d+)') { Fail "Cannot parse java version: $jv" }
-if ([int]$Matches[1] -lt 21) { Fail "JDK 21+ required, found: $jv" }
-Write-Host "JDK: $jv"
+$javaExe = $null
+if ($env:JAVA_HOME -and (Test-Path "$env:JAVA_HOME\bin\java.exe")) { $javaExe = "$env:JAVA_HOME\bin\java.exe" }
+if (-not $javaExe) { $c = Get-Command java -ErrorAction SilentlyContinue; if ($c) { $javaExe = $c.Source } }
+if (-not $javaExe) {
+    foreach ($base in 'C:\Program Files\Eclipse Adoptium', 'C:\Program Files\Java', 'C:\Program Files\Microsoft', 'C:\Program Files\Zulu', 'C:\Program Files\Amazon Corretto') {
+        if (Test-Path $base) {
+            $hit = Get-ChildItem $base -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -match '21' } | Select-Object -First 1
+            if ($hit -and (Test-Path "$($hit.FullName)\bin\java.exe")) { $javaExe = "$($hit.FullName)\bin\java.exe"; break }
+        }
+    }
+}
+if (-not $javaExe) { Fail "java not found. Install JDK 21 (winget install EclipseAdoptium.Temurin.21.JDK) and reopen the terminal." }
+$env:JAVA_HOME = Split-Path -Parent (Split-Path -Parent $javaExe)   # make Gradle use the same JDK
+$jv = (cmd /c "`"$javaExe`" -version 2>&1") | Select-Object -First 1
+if ("$jv" -notmatch '"(\d+)') { Fail "Cannot parse java version: $jv" }
+if ([int]$Matches[1] -lt 21) { Fail "JDK 21+ required, found: $jv ($javaExe)" }
+Write-Host "JDK: $jv  [$javaExe]"
 
 $props = @()
 if ($Owner)  { $props += "-PghOwner=$Owner" }

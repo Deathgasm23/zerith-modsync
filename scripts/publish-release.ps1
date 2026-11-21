@@ -12,7 +12,9 @@ param(
     [Parameter(Mandatory)][string]$Owner,
     [Parameter(Mandatory)][string]$Repo,
     [Parameter(Mandatory)][string]$Version,
-    [Parameter(Mandatory)][string]$ModsDirectory,
+    [string]$ModsDirectory = "",
+    [string]$PackZip = "",              # alternative to -ModsDirectory/-OverridesDirectory: one zip with mods/, config/, resourcepacks/, shaderpacks/, options.txt
+    [string]$OverridesDirectory = "",   # optional: folder containing config/, options.txt, resourcepacks/, shaderpacks/
     [string]$Branch = "main",
     [string]$PackName = "Zerith Modpack",
     [switch]$SkipBuild,
@@ -30,8 +32,49 @@ function Native { param([string]$Exe, [string[]]$A) & $Exe @A; if ($LASTEXITCODE
 if ($Owner -match '^(OWNER|YOUR_USERNAME)$' -or $Owner -notmatch '^[A-Za-z0-9][A-Za-z0-9-]{0,38}$') { Fail "Owner '$Owner' is a placeholder or invalid" }
 if ($Repo -notmatch '^[A-Za-z0-9._-]{1,100}$')      { Fail "Invalid repository name" }
 if ($Version -notmatch '^[0-9A-Za-z][0-9A-Za-z._-]{0,40}$') { Fail "Invalid version '$Version'" }
-if (-not (Test-Path -LiteralPath $ModsDirectory -PathType Container)) { Fail "ModsDirectory not found: $ModsDirectory" }
 $Tag = "v$Version"
+if ($PackZip) {
+    if ($ModsDirectory -or $OverridesDirectory) { Fail "Use either -PackZip or -ModsDirectory/-OverridesDirectory, not both" }
+    if (-not (Test-Path -LiteralPath $PackZip -PathType Leaf)) { Fail "PackZip not found: $PackZip" }
+    Step "Unpacking pack zip"
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $packRoot = Join-Path (Join-Path $root 'dist') "pack-$Tag"
+    if (Test-Path $packRoot) { Remove-Item -Recurse -Force $packRoot }
+    New-Item -ItemType Directory -Force $packRoot | Out-Null
+    $packFull = [IO.Path]::GetFullPath($packRoot).TrimEnd('\') + '\'
+    $zf = [IO.Compression.ZipFile]::OpenRead((Resolve-Path -LiteralPath $PackZip).Path)
+    try {
+        foreach ($e in $zf.Entries) {
+            $dest = [IO.Path]::GetFullPath((Join-Path $packRoot $e.FullName))
+            if (-not $dest.StartsWith($packFull, [StringComparison]::OrdinalIgnoreCase)) { Fail "Unsafe path in zip: $($e.FullName)" }
+            if ($e.FullName.EndsWith('/') -or $e.FullName.EndsWith('\')) { New-Item -ItemType Directory -Force $dest | Out-Null; continue }
+            New-Item -ItemType Directory -Force (Split-Path -Parent $dest) | Out-Null
+            [IO.Compression.ZipFileExtensions]::ExtractToFile($e, $dest, $true)
+        }
+    } finally { $zf.Dispose() }
+    $base = $packRoot
+    if (-not (Test-Path (Join-Path $base 'mods'))) {   # zip wrapped in a single folder
+        $subs = @(Get-ChildItem -LiteralPath $base -Directory)
+        if ($subs.Count -eq 1 -and (Test-Path (Join-Path $subs[0].FullName 'mods'))) { $base = $subs[0].FullName }
+    }
+    if (-not (Test-Path -LiteralPath (Join-Path $base 'mods') -PathType Container)) { Fail "Pack zip has no 'mods' folder" }
+    $ModsDirectory = Join-Path $base 'mods'
+    $ovStage = Join-Path (Join-Path $root 'dist') "pack-$Tag-overrides"
+    if (Test-Path $ovStage) { Remove-Item -Recurse -Force $ovStage }
+    New-Item -ItemType Directory -Force $ovStage | Out-Null
+    foreach ($it in Get-ChildItem -LiteralPath $base -Force) {
+        switch -Regex ($it.Name) {
+            '^mods$' { }
+            '^(config|configs)$' { if (-not $it.PSIsContainer) { Fail "'$($it.Name)' must be a folder" }; Copy-Item -LiteralPath $it.FullName -Destination (Join-Path $ovStage 'config') -Recurse }
+            '^(resourcepacks|shaderpacks)$' { if (-not $it.PSIsContainer) { Fail "'$($it.Name)' must be a folder" }; Copy-Item -LiteralPath $it.FullName -Destination $ovStage -Recurse }
+            '^options\.txt$' { if ($it.PSIsContainer) { Fail "options.txt must be a file" }; Copy-Item -LiteralPath $it.FullName -Destination $ovStage }
+            default { Fail "Unsupported entry in pack zip: '$($it.Name)'. Allowed: mods, config, resourcepacks, shaderpacks, options.txt" }
+        }
+    }
+    if (Get-ChildItem -LiteralPath $ovStage -Force) { $OverridesDirectory = $ovStage }
+}
+if (-not $ModsDirectory) { Fail "Required: -ModsDirectory or -PackZip" }
+if (-not (Test-Path -LiteralPath $ModsDirectory -PathType Container)) { Fail "ModsDirectory not found: $ModsDirectory" }
 
 # ---------- tooling / repository state ----------
 Step "Checking tools and repository"
@@ -87,10 +130,23 @@ Copy-Item $selfJar $work
 # the manifest lives outside the folder that is validated and uploaded
 $manifest = Join-Path $dist "modpack-$Tag.json"
 Step "Generating manifest (validates every JAR, computes SHA-256)"
-Native java @('-jar', $cli, 'generate', '--mods-dir', $work, '--owner', $Owner, '--repo', $Repo, '--tag', $Tag,
-              '--pack-version', $Version, '--pack-name', $PackName, '--output', $manifest)
-Native java @('-jar', $cli, 'validate', $manifest, '--mods-dir', $work)
-$jars = Get-ChildItem $work -Filter *.jar | ForEach-Object { $_.FullName }
+$gen = @('-jar', $cli, 'generate', '--mods-dir', $work, '--owner', $Owner, '--repo', $Repo, '--tag', $Tag,
+         '--pack-version', $Version, '--pack-name', $PackName, '--output', $manifest)
+$extra = Join-Path $dist "release-$Tag-extra"
+$ovZip = $null
+if ($OverridesDirectory) {
+    if (-not (Test-Path -LiteralPath $OverridesDirectory -PathType Container)) { Fail "OverridesDirectory not found: $OverridesDirectory" }
+    if (Test-Path $extra) { Remove-Item -Recurse -Force $extra }
+    New-Item -ItemType Directory -Force $extra | Out-Null
+    $ovZip = Join-Path $extra "overrides-$Tag.zip"
+    $gen += @('--overrides-dir', $OverridesDirectory, '--overrides-zip', $ovZip)
+}
+Native java $gen
+$val = @('-jar', $cli, 'validate', $manifest, '--mods-dir', $work)
+if ($ovZip) { $val += @('--overrides-zip', $ovZip) }
+Native java $val
+$jars = @(Get-ChildItem $work -Filter *.jar | ForEach-Object { $_.FullName })
+if ($ovZip) { $jars += $ovZip }
 Write-Host ("  {0} JARs, manifest: {1}" -f $jars.Count, $manifest)
 
 if ($DryRun) {
@@ -107,7 +163,8 @@ $verify = Join-Path $dist "verify-$Tag"
 if (Test-Path $verify) { Remove-Item -Recurse -Force $verify }
 New-Item -ItemType Directory $verify | Out-Null
 Native gh @('release', 'download', $Tag, '--repo', "$Owner/$Repo", '--dir', $verify)
-foreach ($j in Get-ChildItem $work -Filter *.jar) {
+foreach ($jp in $jars) {
+    $j = Get-Item $jp
     $d = Join-Path $verify $j.Name
     if (-not (Test-Path $d)) { Fail "Asset missing on GitHub: $($j.Name). Draft release $Tag left in place; delete it manually if you want to retry." }
     if ((Get-FileHash $d -Algorithm SHA256).Hash -ne (Get-FileHash $j.FullName -Algorithm SHA256).Hash) { Fail "Asset hash mismatch on GitHub: $($j.Name). Draft release $Tag left in place." }

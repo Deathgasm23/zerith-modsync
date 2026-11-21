@@ -21,6 +21,15 @@ scripts/build.sh --owner YOUR_USERNAME
 ```
 `-Owner`/`--owner` bakes `https://raw.githubusercontent.com/YOUR_USERNAME/zerith-modsync/main/modpack/modpack.json` into the JAR as the default manifest URL. Without it the URL contains `OWNER`, and ModSync refuses to synchronize and shows a configuration error. Players can also override `manifestUrl` in `config/zerith-modsync.json`.
 
+## Config, options.txt, resource packs, shader packs ("overrides")
+Besides `mods`, the manifest can ship one zip with `config/`, `options.txt`, `resourcepacks/` and `shaderpacks/` content. Rules:
+- Only those four locations are allowed (never `saves`, `mods`, anything else); `config/zerith-modsync.json` can never be overridden.
+- A listed file is written **only when the author changed it** (its hash differs from the last applied one). Players keep their own edits to unchanged files, `options.txt` is not reset on every update, and files that are not listed are never touched or deleted.
+- First install applies every listed file (overwriting a player's existing copy, which is saved under `.zerith-modsync/backups-overrides/`).
+- Applied by the same worker after Minecraft exits, together with the mods swap; any failure restores both mods and overridden files. Updates that only change overrides do not re-download or swap the mods.
+- Deleting a file from the pack does not delete it on players' machines.
+- Authoring shortcut: `publish-release -PackZip mods.zip` (zip with `mods/`, `config/`, `resourcepacks/`, `shaderpacks/`, `options.txt`).
+
 ## Configuration (`config/zerith-modsync.json`, created on first start)
 | key | default | meaning |
 |---|---|---|

@@ -54,6 +54,7 @@ tasks.register('generateManifest', JavaExec) {
         args 'generate', '--mods-dir', project.modsDir, '--owner', project.ghOwner, '--repo', project.ghRepo, '--tag', project.tag,
              '--pack-version', project.packVersion, '--output', project.findProperty('output') ?: 'modpack/modpack.json',
              '--pack-name', project.findProperty('packName') ?: 'Zerith Modpack'
+        if (project.hasProperty('overridesDir')) args '--overrides-dir', project.overridesDir, '--overrides-zip', (project.findProperty('overridesZip') ?: "overrides-${project.tag}.zip")
     }
 }
 

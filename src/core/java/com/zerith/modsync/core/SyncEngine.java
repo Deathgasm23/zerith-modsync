@@ -71,47 +71,67 @@ public final class SyncEngine {
         Model.Manifest manifest = f.manifest();
         LocalScanner.Diff diff = scanner.diff(mods, manifest);
         boolean strict = cfg.strictSynchronization;
+        boolean modsChanged = diff.needsUpdate(strict);
+        List<Model.OverrideFile> ov = Overrides.pending(game, data, manifest);
         Path pendingFile = data.resolve(Installer.PENDING);
         String manifestSha = FileOps.sha256(f.json().getBytes(StandardCharsets.UTF_8));
 
-        if (!diff.needsUpdate(strict)) {
+        if (!modsChanged && ov.isEmpty()) {
             discardPending(pendingFile);
-            cleanupStaging(null);
+            cleanupStaging(null, null);
             fetcher.commit(f);
             return new Result(Outcome.UP_TO_DATE, diff, manifest, "Modpack is up to date");
         }
-        listener.status("Modpack differences detected: " + diff.summary());
+        listener.status("Modpack differences detected: " + diff.summary() + " overrides=" + ov.size());
 
         if (Files.exists(pendingFile)) {
             try {
                 Model.Pending old = FileOps.readJson(pendingFile, Model.Pending.class);
-                if (old.manifestSha256().equals(manifestSha) && Files.isDirectory(Path.of(old.stagingDir()))) {
-                    cleanupStaging(old.stagingDir());
+                boolean modsReady = old.stagingDir() == null ? !modsChanged : (modsChanged && Files.isDirectory(Path.of(old.stagingDir())));
+                boolean ovReady = old.overrideFiles().isEmpty() ? ov.isEmpty() : (!ov.isEmpty() && Files.isDirectory(Path.of(old.overridesDir())));
+                if (old.manifestSha256().equals(manifestSha) && modsReady && ovReady) {
+                    cleanupStaging(old.stagingDir(), old.overridesDir());
                     return new Result(Outcome.ALREADY_PENDING, diff, manifest, "Verified update already staged");
                 }
-            } catch (IOException ignored) { /* fall through, restage */ }
+            } catch (IOException | RuntimeException ignored) { /* fall through, restage */ }
             discardPending(pendingFile);
         }
-        cleanupStaging(null);
+        cleanupStaging(null, null);
         if (!cfg.autoDownload) return new Result(Outcome.UPDATE_AVAILABLE, diff, manifest, "autoDownload is disabled");
 
         String tx = UUID.randomUUID().toString();
         Path staging = data.resolve("staging").resolve(tx);
+        Path ovDir = data.resolve("staging-overrides").resolve(tx);
+        Path ovZip = data.resolve("staging-overrides").resolve(tx + ".zip");
         try {
-            Files.createDirectories(staging);
-            checkDisk(manifest);
-            stage(manifest, staging);
-            if (!strict) copyExtras(diff, staging);
+            checkDisk(manifest, modsChanged, ov);
+            if (modsChanged) {
+                Files.createDirectories(staging);
+                stage(manifest, staging);
+                if (!strict) copyExtras(diff, staging);
+            }
+            if (!ov.isEmpty()) {
+                Files.createDirectories(ovDir.getParent());
+                Model.Overrides o = manifest.overrides();
+                listener.status("Downloading overrides archive...");
+                http.download(new Model.Mod("overrides", o.filename(), o.url(), o.sha256(), o.size()), ovZip, n -> { }, () -> cancelled);
+                Overrides.extract(ovZip, o, ov, ovDir);
+                Files.delete(ovZip);
+                Overrides.verifyStaged(ovDir, ov);
+            }
             listener.status("Verifying staged files...");
-            LocalScanner.verify(staging, manifest, strict);
+            if (modsChanged) LocalScanner.verify(staging, manifest, strict);
             String stamp = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss").format(LocalDateTime.now());
-            Model.Pending p = new Model.Pending(tx, manifestSha, staging.toString(), mods.toString(),
+            Model.Pending p = new Model.Pending(tx, manifestSha, modsChanged ? staging.toString() : null, mods.toString(),
                     data.resolve("backups").resolve(stamp + "-" + tx).toString(), f.json(),
-                    ProcessHandle.current().pid(), cfg.maxBackups, cfg.createBackup, strict);
+                    ProcessHandle.current().pid(), cfg.maxBackups, cfg.createBackup, strict,
+                    ov.isEmpty() ? null : ovDir.toString(), ov);
             FileOps.writeJson(pendingFile, p);
             fetcher.commit(f);
         } catch (IOException | RuntimeException e) {
             FileOps.deleteTree(staging);
+            FileOps.deleteTree(ovDir);
+            Files.deleteIfExists(ovZip);
             throw e;
         }
         return new Result(Outcome.STAGED, diff, manifest, "Update staged; restart required");
@@ -163,9 +183,11 @@ public final class SyncEngine {
         }
     }
 
-    private void checkDisk(Model.Manifest m) throws IOException {
+    private void checkDisk(Model.Manifest m, boolean mods, List<Model.OverrideFile> ov) throws IOException {
         long need = 0;
-        for (Model.Mod mod : m.mods()) need += mod.size() != null ? mod.size() : 32L << 20;
+        if (mods) for (Model.Mod mod : m.mods()) need += mod.size() != null ? mod.size() : 32L << 20;
+        if (!ov.isEmpty()) need += m.overrides().size() + ov.stream().mapToLong(Model.OverrideFile::size).sum();
+        Files.createDirectories(data);
         long free = Files.getFileStore(data).getUsableSpace();
         if (free < need + (64L << 20)) throw new IOException("Not enough disk space: need ~" + (need >> 20) + " MiB, free " + (free >> 20) + " MiB");
     }
@@ -174,15 +196,25 @@ public final class SyncEngine {
         if (!Files.exists(pendingFile)) return;
         try {
             Model.Pending old = FileOps.readJson(pendingFile, Model.Pending.class);
-            Path s = Path.of(old.stagingDir()).toAbsolutePath().normalize();
-            if (s.getParent().equals(data.resolve("staging"))) FileOps.deleteTree(s);
+            deleteUnder(old.stagingDir(), data.resolve("staging"));
+            deleteUnder(old.overridesDir(), data.resolve("staging-overrides"));
         } catch (IOException ignored) { /* corrupt pending: just remove it */ }
         Files.deleteIfExists(pendingFile);
     }
 
+    private static void deleteUnder(String dir, Path parent) throws IOException {
+        if (dir == null) return;
+        Path s = Path.of(dir).toAbsolutePath().normalize();
+        if (s.getParent().equals(parent)) FileOps.deleteTree(s);
+    }
+
     /** Removes staging directories that no live transaction refers to (crash leftovers). */
-    private void cleanupStaging(String keep) throws IOException {
-        Path dir = data.resolve("staging");
+    private void cleanupStaging(String keepMods, String keepOverrides) throws IOException {
+        sweep(data.resolve("staging"), keepMods);
+        sweep(data.resolve("staging-overrides"), keepOverrides);
+    }
+
+    private void sweep(Path dir, String keep) throws IOException {
         if (!Files.isDirectory(dir)) return;
         Path keepP = keep == null ? null : Path.of(keep).toAbsolutePath().normalize();
         try (var s = Files.list(dir)) {

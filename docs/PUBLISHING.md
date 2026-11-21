@@ -43,6 +43,32 @@ The script, in order: checks `git`/`gh`/auth, branch `main`, clean tree, `origin
 
 Later update (e.g. `1.0.1`) = same command with a new `-Version` and the complete new folder of JARs. Players pick it up within 15 minutes of the manifest becoming visible (GitHub's raw CDN can lag a few minutes).
 
+### Config / options.txt / resourcepacks / shaderpacks
+Make a folder (e.g. `C:\Modpack\overrides`) that mirrors the game directory, containing only what you want to ship:
+```
+C:\Modpack\overrides\options.txt
+C:\Modpack\overrides\config\sodium-options.json
+C:\Modpack\overrides\resourcepacks\MyPack.zip
+C:\Modpack\overrides\shaderpacks\MyShader.zip
+```
+Add it to the publish command (it is zipped, hashed and uploaded as one extra release asset):
+```powershell
+.\scripts\publish-release.ps1 -Owner "YOUR_USERNAME" -Repo "zerith-modsync" -Version "1.0.1" -ModsDirectory "C:\Modpack\mods" -OverridesDirectory "C:\Modpack\overrides"
+```
+```bash
+scripts/publish-release.sh --owner YOUR_USERNAME --repo zerith-modsync --version 1.0.1 --mods-dir /path/mods --overrides-dir /path/overrides
+```
+**Single zip instead (simplest):** make `mods.zip` containing the folders `mods`, `config` (`configs` is accepted and renamed to `config`), `resourcepacks`, `shaderpacks` and the file `options.txt` (any can be omitted except `mods`; anything else makes the script fail), then:
+```powershell
+.\scripts\publish-release.ps1 -Owner "YOUR_USERNAME" -Repo "zerith-modsync" -Version "1.0.1" -PackZip "C:\Modpack\mods.zip"
+```
+```bash
+scripts/publish-release.sh --owner YOUR_USERNAME --repo zerith-modsync --version 1.0.1 --pack-zip /path/mods.zip
+```
+`-PackZip` cannot be combined with `-ModsDirectory`/`-OverridesDirectory`. The zip is unpacked under `dist/` (never into a game folder); the `mods` part follows the rules above.
+
+Each later release must pass the complete overrides folder (or zip) again. Tip: copy `options.txt` and `config\` from a clean test instance after setting it up; do not include personal data (e.g. server lists are not synced, but options.txt may contain your key bindings and account-independent settings only). Files or folders outside the four allowed locations make the script fail.
+
 ## 4. Verify
 ```powershell
 gh release view v1.0.0 --repo YOUR_USERNAME/zerith-modsync --json assets --jq ".assets[].name"
@@ -53,6 +79,7 @@ Invoke-WebRequest https://raw.githubusercontent.com/YOUR_USERNAME/zerith-modsync
 ## 5. Manual manifest generation
 ```powershell
 .\gradlew.bat generateManifest -PmodsDir=C:\Modpack\release-dir -PghOwner=YOUR_USERNAME -PghRepo=zerith-modsync -Ptag=v1.0.0 -PpackVersion=1.0.0 -Poutput=modpack\modpack.json
+# with config/options/packs: add  -PoverridesDir=C:\Modpack\overrides -PoverridesZip=dist\overrides-v1.0.0.zip
 .\gradlew.bat validateManifest -Pmanifest=modpack\modpack.json
 ```
 The folder must contain only `.jar` files, each a Fabric mod with a unique id, compatible with Minecraft 1.21.1, and exactly one `zerith-modsync` JAR. Output is deterministic (sorted by filename, no timestamps). Asset names are limited to `[A-Za-z0-9._+-]` because GitHub rewrites other characters.

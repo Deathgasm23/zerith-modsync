@@ -2,7 +2,8 @@
 # Publish a modpack version: build ModSync, validate JARs, generate manifest, create a NEW GitHub Release
 # (draft -> verified -> published), then commit/push modpack/modpack.json LAST.
 # Usage: scripts/publish-release.sh --owner USER --repo zerith-modsync --version 1.0.1 --mods-dir /path/to/mods \
-#          [--branch main] [--pack-name NAME] [--skip-build] [--dry-run]
+#          [--overrides-dir DIR] [--branch main] [--pack-name NAME] [--skip-build] [--dry-run]
+# --overrides-dir: folder with config/, options.txt, resourcepacks/, shaderpacks/ (shipped as one zip asset)
 set -euo pipefail
 cd "$(dirname "$0")/.."
 ROOT=$(pwd)
@@ -10,15 +11,46 @@ fail() { echo; echo "PUBLISH FAILED: $*" >&2; echo "The previously published man
 step() { echo "==> $*"; }
 sha() { if command -v sha256sum >/dev/null; then sha256sum "$1" | cut -d' ' -f1; else shasum -a 256 "$1" | cut -d' ' -f1; fi; }
 
-OWNER=""; REPO=""; VERSION=""; MODS=""; BRANCH="main"; PACK="Zerith Modpack"; SKIP_BUILD=0; DRY=0
+OWNER=""; REPO=""; VERSION=""; MODS=""; BRANCH="main"; PACK="Zerith Modpack"; SKIP_BUILD=0; DRY=0; OVR=""; PACKZIP=""
 while [ $# -gt 0 ]; do
   case "$1" in
     --owner) OWNER="$2"; shift 2;; --repo) REPO="$2"; shift 2;; --version) VERSION="$2"; shift 2;;
-    --mods-dir) MODS="$2"; shift 2;; --branch) BRANCH="$2"; shift 2;; --pack-name) PACK="$2"; shift 2;;
+    --mods-dir) MODS="$2"; shift 2;; --branch) BRANCH="$2"; shift 2;; --pack-name) PACK="$2"; shift 2;; --overrides-dir) OVR="$2"; shift 2;;
+    --pack-zip) PACKZIP="$2"; shift 2;;
     --skip-build) SKIP_BUILD=1; shift;; --dry-run) DRY=1; shift;; *) fail "Unknown argument: $1";;
   esac
 done
-[ -n "$OWNER" ] && [ -n "$REPO" ] && [ -n "$VERSION" ] && [ -n "$MODS" ] || fail "Required: --owner --repo --version --mods-dir"
+[ -n "$OWNER" ] && [ -n "$REPO" ] && [ -n "$VERSION" ] || fail "Required: --owner --repo --version and (--mods-dir or --pack-zip)"
+if [ -n "$PACKZIP" ]; then
+  [ -z "$MODS" ] && [ -z "$OVR" ] || fail "Use either --pack-zip or --mods-dir/--overrides-dir, not both"
+  [ -f "$PACKZIP" ] || fail "Pack zip not found: $PACKZIP"
+  echo "==> Unpacking pack zip"
+  PK="$ROOT/dist/pack-v$VERSION"; rm -rf "$PK"; mkdir -p "$PK"
+  if command -v unzip >/dev/null; then rc=0; unzip -q "$PACKZIP" -d "$PK" || rc=$?; [ "$rc" -le 1 ] || fail "Could not unzip (exit $rc)"
+  else (cd "$PK" && jar xf "$(cd "$(dirname "$PACKZIP")" && pwd)/$(basename "$PACKZIP")") || fail "Could not extract (need unzip or jar)"; fi
+  if find "$PK" -type l | grep -q .; then fail "Pack zip contains symbolic links"; fi
+  BASE="$PK"
+  if [ ! -d "$BASE/mods" ]; then
+    n=$(find "$PK" -mindepth 1 -maxdepth 1 | wc -l)
+    [ "$n" = 1 ] && [ -d "$(find "$PK" -mindepth 1 -maxdepth 1)/mods" ] && BASE=$(find "$PK" -mindepth 1 -maxdepth 1)
+  fi
+  [ -d "$BASE/mods" ] || fail "Pack zip has no 'mods' folder"
+  MODS="$BASE/mods"
+  OVS="$ROOT/dist/pack-v$VERSION-overrides"; rm -rf "$OVS"; mkdir -p "$OVS"
+  for it in "$BASE"/* "$BASE"/.[!.]*; do
+    [ -e "$it" ] || continue
+    b=$(basename "$it")
+    case "$b" in
+      mods) ;;
+      config|configs) [ -d "$it" ] || fail "'$b' must be a folder"; cp -r "$it" "$OVS/config";;
+      resourcepacks|shaderpacks) [ -d "$it" ] || fail "'$b' must be a folder"; cp -r "$it" "$OVS/";;
+      options.txt) [ -f "$it" ] || fail "options.txt must be a file"; cp "$it" "$OVS/";;
+      *) fail "Unsupported entry in pack zip: '$b'. Allowed: mods, config, resourcepacks, shaderpacks, options.txt";;
+    esac
+  done
+  [ -n "$(ls -A "$OVS")" ] && OVR="$OVS"
+fi
+[ -n "$MODS" ] || fail "Required: --mods-dir or --pack-zip"
 case "$OWNER" in OWNER|YOUR_USERNAME) fail "Owner '$OWNER' is a placeholder";; esac
 [[ "$OWNER" =~ ^[A-Za-z0-9][A-Za-z0-9-]{0,38}$ ]] || fail "Invalid owner"
 [[ "$REPO" =~ ^[A-Za-z0-9._-]{1,100}$ ]] || fail "Invalid repository name"
@@ -70,10 +102,19 @@ done
 cp "$SELF" "$WORK/"
 MANIFEST="$DIST/modpack-$TAG.json"
 step "Generating manifest (validates every JAR, computes SHA-256)"
-java -jar "$CLI" generate --mods-dir "$WORK" --owner "$OWNER" --repo "$REPO" --tag "$TAG" \
-     --pack-version "$VERSION" --pack-name "$PACK" --output "$MANIFEST" || fail "Manifest generation failed"
-java -jar "$CLI" validate "$MANIFEST" --mods-dir "$WORK" || fail "Manifest validation failed"
+GEN=(generate --mods-dir "$WORK" --owner "$OWNER" --repo "$REPO" --tag "$TAG" --pack-version "$VERSION" --pack-name "$PACK" --output "$MANIFEST")
+VAL=(validate "$MANIFEST" --mods-dir "$WORK")
+OVZIP=""
+if [ -n "$OVR" ]; then
+  [ -d "$OVR" ] || fail "Overrides directory not found: $OVR"
+  EXTRA="$DIST/release-$TAG-extra"; rm -rf "$EXTRA"; mkdir -p "$EXTRA"
+  OVZIP="$EXTRA/overrides-$TAG.zip"
+  GEN+=(--overrides-dir "$OVR" --overrides-zip "$OVZIP"); VAL+=(--overrides-zip "$OVZIP")
+fi
+java -jar "$CLI" "${GEN[@]}" || fail "Manifest generation failed"
+java -jar "$CLI" "${VAL[@]}" || fail "Manifest validation failed"
 JARS=("$WORK"/*.jar)
+[ -n "$OVZIP" ] && JARS+=("$OVZIP")
 echo "  ${#JARS[@]} JARs, manifest: $MANIFEST"
 
 if [ "$DRY" = 1 ]; then

@@ -43,6 +43,52 @@ public final class ManifestValidator {
         }
         if (total > policy.maxPackBytes()) throw bad("Pack exceeds size limit");
         if (!self) throw bad("Manifest must include the updater itself (" + SELF_ID + ")");
+        if (m.overrides() != null) validateOverrides(m.overrides(), policy);
+    }
+
+    static final Pattern ZIP = Pattern.compile("[A-Za-z0-9][A-Za-z0-9._+-]{0,150}[.]zip");
+    static final Pattern SEGMENT = Pattern.compile("[A-Za-z0-9()@=,'+_\\[\\]-][A-Za-z0-9 .()@=,'+_\\[\\]-]*");
+    static final Set<String> ROOTS = Set.of("config", "resourcepacks", "shaderpacks");
+    static final Set<String> RESERVED = Set.of("con", "prn", "aux", "nul", "com1", "com2", "com3", "com4", "com5", "com6", "com7", "com8", "com9",
+            "lpt1", "lpt2", "lpt3", "lpt4", "lpt5", "lpt6", "lpt7", "lpt8", "lpt9");
+    public static final String OWN_CONFIG = "config/zerith-modsync.json";
+
+    /** Returns null if the path is a safe overrides target, else the reason. */
+    public static String checkOverridePath(String path) {
+        if (path == null || path.isEmpty() || path.length() > 240) return "bad length";
+        if (path.equals("options.txt")) return null;
+        String[] seg = path.split("/", -1);
+        if (seg.length < 2 || !ROOTS.contains(seg[0])) return "only options.txt, config/, resourcepacks/ and shaderpacks/ may be synchronized";
+        for (int i = 1; i < seg.length; i++) {
+            String x = seg[i];
+            if (x.isEmpty() || x.equals(".") || x.equals("..") || !SEGMENT.matcher(x).matches() || x.endsWith(" ") || x.endsWith("."))
+                return "unsafe path segment '" + x + "'";
+            String base = x.contains(".") ? x.substring(0, x.indexOf('.')) : x;
+            if (RESERVED.contains(base.toLowerCase(Locale.ROOT))) return "reserved name '" + x + "'";
+        }
+        if (path.equalsIgnoreCase(OWN_CONFIG)) return "the updater's own config cannot be overridden";
+        return null;
+    }
+
+    private static void validateOverrides(Model.Overrides o, Policy policy) {
+        if (o.filename() == null || !ZIP.matcher(o.filename()).matches()) throw bad("Invalid overrides archive filename: " + o.filename());
+        try { policy.checkUrl(URI.create(Objects.requireNonNull(o.url(), "url missing"))); }
+        catch (RuntimeException e) { throw bad("Bad overrides URL: " + e.getMessage()); }
+        if (o.sha256() == null || !SHA.matcher(o.sha256()).matches()) throw bad("Invalid SHA-256 for overrides archive");
+        if (o.size() < 1 || o.size() > policy.maxPackBytes()) throw bad("Invalid overrides archive size");
+        if (o.files() == null || o.files().isEmpty() || o.files().size() > 20_000) throw bad("Overrides must list 1..20000 files");
+        Set<String> seen = new HashSet<>();
+        long total = 0;
+        for (Model.OverrideFile f : o.files()) {
+            if (f == null) throw bad("Null overrides entry");
+            String why = checkOverridePath(f.path());
+            if (why != null) throw bad("Overrides path '" + f.path() + "': " + why);
+            if (!seen.add(f.path().toLowerCase(Locale.ROOT))) throw bad("Duplicate overrides path: " + f.path());
+            if (f.sha256() == null || !SHA.matcher(f.sha256()).matches()) throw bad("Invalid SHA-256 for " + f.path());
+            if (f.size() < 0 || f.size() > (1L << 30)) throw bad("Invalid size for " + f.path());
+            total += f.size();
+        }
+        if (total > policy.maxPackBytes()) throw bad("Overrides exceed size limit");
     }
 
     private static boolean blank(String s) { return s == null || s.isBlank(); }

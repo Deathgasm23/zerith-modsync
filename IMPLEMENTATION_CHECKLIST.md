@@ -3,7 +3,7 @@ Audit commit: none (directory is not a git repository; nothing was initialized o
 
 ## Audit summary
 - Baseline: ~360 dense lines (package `dev.zerith.modsync`, 7 trivial tests, Fabric API hard dependency, no startup recovery, 304 skipped the local scan). `./gradlew build` was green. Decision: rewrite under `com.zerith.modsync`, keep the Loom/worker architecture.
-- Versions checked against maven.fabricmc.net on 2026-11-21: Loom 1.14.10 (`fabric-loom-remap`), Fabric Loader 0.20.1, Yarn 1.21.11+build.6, Gradle 9.2.1 wrapper. Fabric API removed (unused).
+- Versions checked against maven.fabricmc.net on 2026-11-21: Loom 1.14.10 (`fabric-loom-remap`), Fabric Loader 0.20.1, Yarn 1.21.1+build.6, Gradle 9.2.1 wrapper. Fabric API removed (unused).
 - Architecture: `src/core/java` (shared) → mod (`src/main`), `worker/` fat JAR embedded as `worker/worker.jar`, `manifest-cli/` fat JAR.
 - Environment: Windows 11, JDK 21 + 25, `git` present, `gh` NOT installed. No remote/push/release was made.
 
@@ -19,8 +19,9 @@ Audit commit: none (directory is not a git repository; nothing was initialized o
 - [x] Manifest generator/validator CLI, deterministic, release URLs, rejects dup/non-Fabric/missing-or-duplicate updater/incompatible MC — `manifest-cli/Main` — `WorkerAndCliTest`; Gradle tasks `generateManifest`/`validateManifest`
 - [x] Production remapped JAR with embedded worker, expanded fabric.mod.json, build-time manifest URL — `dist/zerith-modsync-1.0.0.jar` — `scripts/build.ps1` and `build.sh` both pass; identical SHA-256
 - [x] Scripts: build/validate/publish (.ps1/.sh) — `scripts/` — build ×2 run OK; publish `-DryRun` run OK in a scratch git copy (ps1 + sh); placeholder owner and missing `gh` rejected
+- [x] Overrides (config/, options.txt, resourcepacks/, shaderpacks/) — per-file apply when author changes it, zip asset, path allowlist, backup/rollback/recovery, overrides-only updates — `core/Overrides.java`, `Installer.applyOverrides` — `OverridesTest` (17 tests); user-approved scope extension (original spec said never touch these)
 - [x] Docs: README, docs/PUBLISHING.md, docs/RECOVERY.md, RELEASE_NOTES.md
-- [ ] Fabric client behaviour inside a real Minecraft 1.21.11 client (entrypoint, chat/action-bar messages, worker auto-launch, shutdown hook) — compiled and remapped but NOT run in-game — P1 UNVERIFIED
+- [ ] Fabric client behaviour inside a real Minecraft 1.21.1 client (entrypoint, chat/action-bar messages, worker auto-launch, shutdown hook) — compiled and remapped but NOT run in-game — P1 UNVERIFIED
 - [ ] Publish script GitHub half (`gh release create --draft`, asset download-verify, `release edit`, manifest push, raw URL check) — written, never executed (`gh` absent, no authorization) — P1 UNVERIFIED
 - [ ] Worker launch from the game on Linux/macOS — UNVERIFIED (code uses `java` instead of `javaw`) — P2
 
@@ -31,7 +32,7 @@ Audit commit: none (directory is not a git repository; nothing was initialized o
 - [ ] Hashing cache keyed on size+mtime: a same-size same-mtime forged file would not be rehashed in one session (restart rehashes) — P3
 
 ## Tests and delivery
-- [x] `./gradlew clean build` (JDK 21): 73 tests, 0 failures, 0 skipped
+- [x] `./gradlew clean build` (JDK 21): 90 tests, 0 failures, 0 skipped
 - [x] `scripts\build.ps1` (JDK 25 as Gradle JVM, JDK 21 toolchain) and `scripts/build.sh`: BUILD OK
 - [ ] Linux/macOS runtime — UNVERIFIED
 - [ ] Real GitHub round-trip — UNVERIFIED
