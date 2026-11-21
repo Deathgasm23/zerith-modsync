@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "zerith-modsync",
+  "version": "${version}",
+  "name": "Zerith ModSync",
+  "description": "Keeps the mods folder identical to an official GitHub modpack manifest; swaps it safely after Minecraft exits.",
+  "authors": ["Zerith"],
+  "environment": "client",
+  "entrypoints": { "client": ["com.zerith.modsync.ZerithModSyncClient"] },
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "1.21.1",
+    "java": ">=21"
+  }
+}

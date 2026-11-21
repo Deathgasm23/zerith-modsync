@@ -1,0 +1,70 @@
+plugins {
+    id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
+}
+
+version = project.mod_version
+group = project.maven_group
+base { archivesName = project.archives_base_name }
+
+repositories { mavenCentral() }
+sourceSets.main.java.srcDir 'src/core/java'
+sourceSets.test.java.srcDirs 'worker/src/main/java', 'manifest-cli/src/main/java'   // worker/CLI entry points are unit-tested in-process
+evaluationDependsOn ':worker'
+evaluationDependsOn ':manifest-cli'
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation 'com.google.code.gson:gson:2.13.2'   // provided by Minecraft at runtime
+    testImplementation platform('org.junit:junit-bom:5.14.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// Build-time default manifest location: -PghOwner=<github user> [-PghRepo=...] [-PghBranch=...]
+def pOwner = project.findProperty('ghOwner') ?: project.modpack_owner
+def pRepo = project.findProperty('ghRepo') ?: project.modpack_repo
+def pBranch = project.findProperty('ghBranch') ?: project.modpack_branch
+
+processResources {
+    dependsOn ':worker:workerJar'
+    inputs.property 'version', project.version
+    inputs.property 'owner', pOwner
+    inputs.property 'repo', pRepo
+    inputs.property 'branch', pBranch
+    filesMatching('fabric.mod.json') { expand version: project.version }
+    filesMatching('zerith-modsync-build.properties') { expand owner: pOwner, repo: pRepo, branch: pBranch }
+    from(project(':worker').tasks.named('workerJar')) { rename { 'worker.jar' }; into 'worker' }
+}
+
+tasks.withType(JavaCompile).configureEach { options.release = 21; options.encoding = 'UTF-8' }
+java { toolchain.languageVersion = JavaLanguageVersion.of(21) }
+test { useJUnitPlatform(); testLogging { events 'failed'; exceptionFormat 'short' } }
+
+def cliJar = project(':manifest-cli').tasks.named('cliJar')
+
+tasks.register('generateManifest', JavaExec) {
+    group = 'zerith modsync'
+    description = 'Generate modpack manifest: -PmodsDir=DIR -PghOwner=O -PghRepo=R -Ptag=vX -PpackVersion=X [-Poutput=modpack/modpack.json] [-PpackName=N]'
+    classpath = files(cliJar)
+    mainClass = 'com.zerith.modsync.cli.Main'
+    doFirst {
+        ['modsDir', 'ghOwner', 'ghRepo', 'tag', 'packVersion'].each { if (!project.hasProperty(it)) throw new GradleException("Missing -P$it") }
+        args 'generate', '--mods-dir', project.modsDir, '--owner', project.ghOwner, '--repo', project.ghRepo, '--tag', project.tag,
+             '--pack-version', project.packVersion, '--output', project.findProperty('output') ?: 'modpack/modpack.json',
+             '--pack-name', project.findProperty('packName') ?: 'Zerith Modpack'
+    }
+}
+
+tasks.register('validateManifest', JavaExec) {
+    group = 'zerith modsync'
+    description = 'Validate a manifest: [-Pmanifest=modpack/modpack.json] [-PmodsDir=DIR]'
+    classpath = files(cliJar)
+    mainClass = 'com.zerith.modsync.cli.Main'
+    doFirst {
+        def a = ['validate', project.findProperty('manifest') ?: 'modpack/modpack.json']
+        if (project.hasProperty('modsDir')) a += ['--mods-dir', project.modsDir]
+        args a
+    }
+}

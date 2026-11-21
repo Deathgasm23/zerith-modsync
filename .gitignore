@@ -1,0 +1,17 @@
+.gradle/
+build/
+**/build/
+run/
+dist/
+*.log
+.idea/
+*.iml
+.zerith-modsync/
+# private material
+*.pem
+*.key
+.env
+# third-party modpack JAR collections must never be committed (they are Release assets)
+mods/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar

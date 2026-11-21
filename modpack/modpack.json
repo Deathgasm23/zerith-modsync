@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "modpack": {
+    "name": "Zerith Modpack",
+    "version": "0.0.0-template",
+    "minecraftVersion": "1.21.1",
+    "loader": "fabric"
+  },
+  "mods": [
+    {
+      "id": "zerith-modsync",
+      "filename": "zerith-modsync-1.0.0.jar",
+      "url": "https://github.com/OWNER/zerith-modsync/releases/download/v1.0.0/zerith-modsync-1.0.0.jar",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 1
+    }
+  ]
+}

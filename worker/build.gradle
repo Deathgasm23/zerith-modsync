@@ -1,0 +1,17 @@
+plugins { id 'java' }
+version = rootProject.version
+repositories { mavenCentral() }
+dependencies { implementation 'com.google.code.gson:gson:2.13.2' }
+sourceSets.main.java.srcDirs = [rootProject.file('src/core/java'), file('src/main/java')]
+java { toolchain.languageVersion = JavaLanguageVersion.of(21) }
+tasks.withType(JavaCompile).configureEach { options.release = 21; options.encoding = 'UTF-8' }
+
+tasks.register('workerJar', Jar) {
+    dependsOn configurations.runtimeClasspath
+    archiveFileName = 'zerith-modsync-worker.jar'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest { attributes 'Main-Class': 'com.zerith.modsync.worker.WorkerMain' }
+    from sourceSets.main.output
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA'
+}
